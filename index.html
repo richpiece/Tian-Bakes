@@ -3,30 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tian Bakes | Bespoke Cakes and Bakes</title>
+  <title>Tian Bakes | Bespoke Cakes</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body class="bg-pink-50 font-sans text-gray-800 scroll-smooth">
 
 <!-- Navigation Bar -->
-<nav class="bg-white shadow-md fixed w-full z-50">
+<nav class="bg-white shadow-md w-full z-50">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="flex justify-center items-center h-20">
-      <!-- Logo centered and bigger -->
-      <img src="logo.png" alt="Tian Bakes Logo" class="h-20 md:h-28"> <!-- increased by ~30% -->
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo left -->
+      <img src="logo.png" alt="Tian Bakes Logo" class="h-16 md:h-20">
+
+      <!-- Nav links -->
+      <div class="hidden md:flex space-x-8 text-lg">
+        <a href="#about" class="text-gray-700 hover:text-pink-600">About</a>
+        <a href="#cakes" class="text-gray-700 hover:text-pink-600">Cakes</a>
+        <a href="#reviews" class="text-gray-700 hover:text-pink-600">Reviews</a>
+        <a href="#contact" class="text-gray-700 hover:text-pink-600">Contact</a>
+      </div>
     </div>
   </div>
 </nav>
 
-<!-- Spacer for fixed nav -->
-<div class="h-28"></div> <!-- adjusted for larger logo -->
-
-<!-- Hero -->
-<section class="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-pink-100 to-pink-200 text-center">
-  <h1 class="text-6xl md:text-7xl font-extrabold text-pink-700">Tian Bakes</h1>
-  <p class="mt-4 text-3xl md:text-4xl font-[Great Vibes] text-pink-600">Bespoke Cakes, Cupcakes & Cookies</p>
-  <a href="#cakes" class="mt-8 px-8 py-4 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition">See Cakes</a>
+<!-- Hero with Background Image -->
+<section class="h-screen flex flex-col justify-center items-center text-center bg-cover bg-center relative"
+  style="background-image: url('https://via.placeholder.com/1600x900');">
+  <div class="absolute inset-0 bg-black bg-opacity-30"></div> <!-- Dark overlay for readability -->
+  <div class="relative z-10">
+    <h1 class="text-6xl md:text-7xl font-extrabold text-white drop-shadow-lg">Tian Bakes</h1>
+    <p class="mt-4 text-3xl md:text-4xl font-[Great Vibes] text-pink-100 drop-shadow-lg">Bespoke Cakes, Cupcakes & Cookies</p>
+    <a href="#cakes" class="mt-8 inline-block px-8 py-4 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition">See Cakes</a>
+  </div>
 </section>
 
 <!-- About -->
@@ -47,21 +56,21 @@
       <div class="bg-pink-50 rounded-lg shadow-md overflow-hidden">
         <img src="https://via.placeholder.com/400x300" alt="Chocolate Cake" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h4 class="font-bold text-lg">Custom Cupcakes Delight</h4>
+          <h4 class="font-bold text-lg">Chocolate Delight</h4>
           <p class="text-gray-600 mt-2">Rich and moist chocolate cake topped with creamy ganache.</p>
         </div>
       </div>
       <div class="bg-pink-50 rounded-lg shadow-md overflow-hidden">
         <img src="https://via.placeholder.com/400x300" alt="Birthday Cake" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h4 class="font-bold text-lg">Birthday Cakes</h4>
+          <h4 class="font-bold text-lg">Birthday Bliss</h4>
           <p class="text-gray-600 mt-2">A fun and colorful cake to make every birthday special.</p>
         </div>
       </div>
       <div class="bg-pink-50 rounded-lg shadow-md overflow-hidden">
         <img src="https://via.placeholder.com/400x300" alt="Wedding Cake" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h4 class="font-bold text-lg">Wedding Anniversaries</h4>
+          <h4 class="font-bold text-lg">Wedding Elegance</h4>
           <p class="text-gray-600 mt-2">Elegant, multi-tiered cakes perfect for your big day.</p>
         </div>
       </div>
@@ -84,13 +93,13 @@
 
       <!-- Review 2 -->
       <div class="bg-white p-4 rounded shadow">
-        <p class="font-semibold text-pink-600">⭐ ⭐ ⭐ ⭐ ⭐ Paula C</p>
+        <p class="font-semibold text-pink-600">⭐ ⭐ ⭐ ⭐ ⭐ Paula Chambers</p>
         <p>This cake will be the second our family has purchased from Tian Bakes, and yet again, we were very satisfied with our creation. By far the best vegan cake we have tasted so far, and honestly, we have tried so many cakes from different …</p>
       </div>
 
       <!-- Review 3 -->
       <div class="bg-white p-4 rounded shadow">
-        <p class="font-semibold text-pink-600">⭐ ⭐ ⭐ ⭐ ⭐ Nadia D</p>
+        <p class="font-semibold text-pink-600">⭐ ⭐ ⭐ ⭐ ⭐ Nadia Dendoune</p>
         <p>The cake for our son’s birthday was absolutely perfect – beautifully decorated, delicious, and a big hit with all the kids and adults alike!</p>
       </div>
     </div>
@@ -112,7 +121,7 @@
       <!-- Email -->
       <div class="flex items-center space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4 4m0 0l-4-4m4 4V8" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4z" />
         </svg>
         <span>tianbakes@outlook.com</span>
       </div>
