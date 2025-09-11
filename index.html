@@ -32,17 +32,26 @@
   }
   </script>
 </head>
-<body class="bg-pink-50 font-sans text-gray-800">
+<body class="bg-pink-50 font-sans text-gray-800 scroll-smooth">
 
-<!-- Header / Logo Centered -->
-<header class="bg-white shadow-md py-6">
-  <div class="flex flex-col items-center">
-    <img src="logo.png" alt="Tian Bakes Logo" class="h-20 mb-2">
-    <h2 class="text-2xl md:text-3xl font-cursive text-pink-600" style="font-family: 'Great Vibes', cursive;">
-      Bespoke Cakes, Cupcakes & Cookies
-    </h2>
+<!-- Navigation Bar -->
+<nav class="bg-white shadow-md fixed w-full z-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0">
+        <img src="logo.png" alt="Tian Bakes Logo" class="h-12">
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#about" class="text-gray-700 hover:text-pink-600 font-semibold">About</a>
+        <a href="#reviews" class="text-gray-700 hover:text-pink-600 font-semibold">Reviews</a>
+        <a href="#contact" class="text-gray-700 hover:text-pink-600 font-semibold">Contact</a>
+      </div>
+    </div>
   </div>
-</header>
+</nav>
+
+<!-- Spacer for fixed nav -->
+<div class="h-16"></div>
 
 <!-- Hero -->
 <section class="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-pink-100 to-pink-200 text-center">
@@ -100,7 +109,7 @@
     <div class="space-y-6">
       <div class="bg-white p-4 rounded shadow">
         <p class="font-semibold">⭐ ⭐ ⭐ ⭐ ⭐ Richard</p>
-        <p>Ordered a cake for my birthday, we wanted a snickers flavour. We were amazed, the cake was so soft and moist and the filling really was better than snickers. We will order again for ourselves and friends, can we get a discount?? Haha, thanks!</p>
+        <p>Ordered a cake for our birthday, we wanted a snickers flavour. We were amazed, the cake was so soft and moist and the filling really was better than snickers. We will order again for ourselves and friends, can we get a discount?? Haha, thanks!</p>
       </div>
       <div class="bg-white p-4 rounded shadow">
         <p class="font-semibold">⭐ ⭐ ⭐ ⭐ ⭐ Paula Chambers</p>
@@ -121,7 +130,7 @@
     <div class="space-y-4 flex flex-col items-center">
       <p class="text-gray-800 font-semibold">Address: CR4 Mitcham, London, UK</p>
       <iframe src="https://www.google.com/maps?q=CR4+Mitcham+London&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" class="mb-4"></iframe>
-      <div class="flex space-x-6 text-gray-700 text-xl">
+      <div class="flex space-x-6 text-gray-700 text-2xl">
         <a href="mailto:tianbakes@outlook.com" class="hover:text-pink-600"><i class="fas fa-envelope"></i></a>
         <a href="tel:+447555207967" class="hover:text-green-600"><i class="fas fa-phone"></i></a>
         <a href="https://www.instagram.com/tian_bakes/" target="_blank" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
