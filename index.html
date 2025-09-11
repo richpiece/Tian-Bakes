@@ -6,157 +6,202 @@
   <title>Tian Bakes | Bespoke Cakes</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Floating contact icons styling */
+    .contact-icons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1000;
+    }
+    .contact-icons a {
+      background: white;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .contact-icons a:hover {
+      transform: scale(1.1);
+    }
+    .contact-icons i {
+      font-size: 22px;
+      color: #d6336c; /* pink tone */
+    }
+    .contact-icons a:nth-child(2) i { color: #28a745; } /* phone green */
+    .contact-icons a:nth-child(3) i { color: #e1306c; } /* Instagram pink */
+    .contact-icons a:nth-child(4) i { color: #1877f2; } /* Facebook blue */
+  </style>
 </head>
 <body class="bg-pink-50 font-sans text-gray-800 scroll-smooth">
 
-<!-- Navigation Bar -->
-<nav class="bg-white shadow-md w-full z-50">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="flex justify-between items-center h-20">
-      <!-- Logo left -->
-      <img src="logo.png" alt="Tian Bakes Logo" class="h-16 md:h-20">
-
-      <!-- Nav links -->
-      <div class="hidden md:flex space-x-8 text-lg">
-        <a href="#about" class="text-gray-700 hover:text-pink-600">About</a>
-        <a href="#cakes" class="text-gray-700 hover:text-pink-600">Cakes</a>
-        <a href="#reviews" class="text-gray-700 hover:text-pink-600">Reviews</a>
-        <a href="#contact" class="text-gray-700 hover:text-pink-600">Contact</a>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<!-- Hero with Background Image -->
-<section class="h-screen flex flex-col justify-center items-center text-center bg-cover bg-center relative"
-  style="background-image: url('background.png');">
-  <div class="absolute inset-0 bg-black bg-opacity-30"></div> <!-- Dark overlay for readability -->
-  <div class="relative z-10">
-    <h1 class="text-6xl md:text-7xl font-extrabold text-white drop-shadow-lg">Tian Bakes</h1>
-    <p class="mt-4 text-3xl md:text-4xl font-[Great Vibes] text-pink-100 drop-shadow-lg">Bespoke Cakes, Cupcakes & Cookies</p>
-    <a href="#cakes" class="mt-8 inline-block px-8 py-4 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition">See Cakes</a>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about" class="max-w-4xl mx-auto py-16 px-6 text-center">
-  <h3 class="text-3xl font-bold text-pink-600 mb-6">About Us</h3>
-  <p class="text-lg text-gray-700 leading-relaxed">
-    We create unique, handcrafted cakes for birthdays, weddings, and special occasions.
-    Every cake is baked fresh and delivered personally in Mitcham, Croydon, and across South London,
-    ensuring it arrives looking as good as it tastes. Our bakery holds a 5★ Hygiene rating.
-  </p>
-</section>
-
-<!-- Cakes -->
-<section id="cakes" class="bg-white py-16">
-  <div class="max-w-5xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-center text-pink-600 mb-12">Our Cakes</h3>
-    <div class="grid gap-8 md:grid-cols-3">
-      <div class="bg-pink-50 rounded-lg shadow-md overflow-hidden">
-        <img src="https://via.placeholder.com/400x300" alt="Chocolate Cake" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4 class="font-bold text-lg">Chocolate Delight</h4>
-          <p class="text-gray-600 mt-2">Rich and moist chocolate cake topped with creamy ganache.</p>
-        </div>
-      </div>
-      <div class="bg-pink-50 rounded-lg shadow-md overflow-hidden">
-        <img src="https://via.placeholder.com/400x300" alt="Birthday Cake" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4 class="font-bold text-lg">Birthday Bliss</h4>
-          <p class="text-gray-600 mt-2">A fun and colorful cake to make every birthday special.</p>
-        </div>
-      </div>
-      <div class="bg-pink-50 rounded-lg shadow-md overflow-hidden">
-        <img src="https://via.placeholder.com/400x300" alt="Wedding Cake" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4 class="font-bold text-lg">Wedding Elegance</h4>
-          <p class="text-gray-600 mt-2">Elegant, multi-tiered cakes perfect for your big day.</p>
+  <!-- Navigation Bar -->
+  <nav class="bg-white shadow-md w-full z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo left -->
+        <img src="logo.png" alt="Tian Bakes Logo" class="h-16 md:h-20">
+        <div class="hidden md:flex space-x-8 text-lg">
+          <a href="#about" class="text-gray-700 hover:text-pink-600">About</a>
+          <a href="#cakes" class="text-gray-700 hover:text-pink-600">Cakes</a>
+          <a href="#reviews" class="text-gray-700 hover:text-pink-600">Reviews</a>
+          <a href="#gallery" class="text-gray-700 hover:text-pink-600">Gallery</a>
+          <a href="#contact" class="text-gray-700 hover:text-pink-600">Contact</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- Reviews -->
-<section id="reviews" class="bg-pink-100 py-16">
-  <div class="max-w-5xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-pink-600 text-center mb-6">Customer Reviews</h3>
-    <p class="text-center mb-8">See all reviews <a href="https://www.google.com/search?q=tian+bakes" target="_blank" class="text-pink-600 underline">here</a></p>
-
-    <div class="space-y-6">
-      <!-- Review 1 -->
-      <div class="bg-white p-4 rounded shadow">
-        <p class="font-semibold text-pink-600">⭐ ⭐ ⭐ ⭐ ⭐ Richard</p>
-        <p>Ordered a cake for our birthday, we wanted a snickers flavour. We were amazed, the cake was so soft and moist and the filling really was better than snickers. We will order again for ourselves and friends, can we get a discount?? Haha, thanks!</p>
-      </div>
-
-      <!-- Review 2 -->
-      <div class="bg-white p-4 rounded shadow">
-        <p class="font-semibold text-pink-600">⭐ ⭐ ⭐ ⭐ ⭐ Paula Chambers</p>
-        <p>This cake will be the second our family has purchased from Tian Bakes, and yet again, we were very satisfied with our creation. By far the best vegan cake we have tasted so far, and honestly, we have tried so many cakes from different …</p>
-      </div>
-
-      <!-- Review 3 -->
-      <div class="bg-white p-4 rounded shadow">
-        <p class="font-semibold text-pink-600">⭐ ⭐ ⭐ ⭐ ⭐ Nadia Dendoune</p>
-        <p>The cake for our son’s birthday was absolutely perfect – beautifully decorated, delicious, and a big hit with all the kids and adults alike!</p>
-      </div>
+  <!-- Hero with Background Image -->
+  <section class="h-screen flex flex-col justify-center items-center text-center bg-cover bg-center relative"
+    style="background-image: url('background.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    <div class="relative z-10">
+      <h1 class="text-6xl md:text-7xl font-extrabold text-white drop-shadow-lg">Tian Bakes</h1>
+      <p class="mt-4 text-3xl md:text-4xl font-[Great Vibes] text-pink-100 drop-shadow-lg">
+        Bespoke Cakes, Cupcakes & Cookies
+      </p>
+      <a href="#cakes" class="mt-8 inline-block px-8 py-4 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition">See Cakes</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contact -->
-<section id="contact" class="bg-white py-16">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-bold text-pink-600 mb-6">Get in Touch</h3>
-    <p class="text-lg text-gray-700 mb-6">
-      Want to order a cake or ask a question? Reach us directly:
+  <!-- About -->
+  <section id="about" class="max-w-4xl mx-auto py-16 px-6 text-center">
+    <h3 class="text-3xl font-bold text-pink-600 mb-6">About Us</h3>
+    <p class="text-lg text-gray-700 leading-relaxed">
+      We create unique, handcrafted cakes for birthdays, weddings, and special occasions.
+      Every cake is baked fresh and delivered personally in Mitcham, Croydon, and across South London,
+      ensuring it arrives looking as good as it tastes. Our bakery holds a 5★ Hygiene rating.
     </p>
+  </section>
 
-    <p class="text-gray-800 font-semibold mb-4">Address: CR4 Mitcham, London, UK</p>
-    <iframe src="https://www.google.com/maps?q=CR4+Mitcham+London&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" class="mb-6"></iframe>
-
-    <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-10 text-gray-800 text-lg">
-      <!-- Email -->
-      <div class="flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4z" />
-        </svg>
-        <span>tianbakes@outlook.com</span>
-      </div>
-
-      <!-- Phone -->
-      <div class="flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l3 6-2 2a15 15 0 006 6l2-2 6 3v2a1 1 0 01-1 1h-1a19 19 0 01-18-18V4a1 1 0 011-1z"/>
-        </svg>
-        <span>+44 7555 207967</span>
-      </div>
-
-      <!-- Instagram -->
-      <div class="flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm4.75-.75a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/>
-        </svg>
-        <a href="https://www.instagram.com/tian_bakes/" target="_blank">Instagram</a>
-      </div>
-
-      <!-- Facebook -->
-      <div class="flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22 12a10 10 0 10-11.5 9.95v-7.05h-2.7v-2.9h2.7V9.5c0-2.7 1.62-4.2 4.1-4.2 1.19 0 2.44.21 2.44.21v2.68h-1.37c-1.35 0-1.77.84-1.77 1.7v2.05h3l-.48 2.9h-2.52v7.05A10 10 0 0022 12z"/>
-        </svg>
-        <a href="https://www.facebook.com/TianBakes" target="_blank">Facebook</a>
+  <!-- Products -->
+  <section id="cakes" class="bg-white py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center text-pink-600 mb-12">Our Products</h3>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="bg-pink-50 rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/400x300" alt="Cake Product" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Cakes</h4>
+            <p class="text-gray-600 mt-2">From birthdays to weddings, our cakes are baked fresh and designed to impress.</p>
+          </div>
+        </div>
+        <div class="bg-pink-50 rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/400x300" alt="Cupcakes Product" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Cupcakes</h4>
+            <p class="text-gray-600 mt-2">Delicious, fluffy cupcakes in a variety of flavours, perfect for parties and gifts.</p>
+          </div>
+        </div>
+        <div class="bg-pink-50 rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/400x300" alt="Cookies Product" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg">Cookies</h4>
+            <p class="text-gray-600 mt-2">Handcrafted cookies that are as beautiful as they are tasty, ideal for any occasion.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer class="bg-pink-100 py-6 text-center text-gray-500">
-  © 2025 Tian Bakes. All rights reserved.
-</footer>
+  <!-- Gallery -->
+  <section id="gallery" class="py-16">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <div class="gallery grid gap-4 md:grid-cols-3 justify-items-center">
+        <img src="cake1.jpg" alt="Cake Sample 1"/>
+        <img src="cake2.jpg" alt="Cake Sample 2"/>
+        <img src="cupcake1.jpg" alt="Cupcake Sample"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Embedded TikTok Video -->
+  <section id="featured" class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <!-- TikTok embed code -->
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tianbakes/video/7495284150811757846" data-video-id="7495284150811757846" style="width: 100%; max-width: 500px; margin: 0 auto;">
+        <section> <a target="_blank" title="Tian Bakes TikTok Video" href="https://www.tiktok.com/@tianbakes/video/7495284150811757846">Watch this video on TikTok</a> </section>
+      </blockquote>
+      <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="bg-pink-100 py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-pink-600 text-center mb-6">Customer Reviews</h3>
+      <p class="text-center mb-8">See all reviews <a href="https://www.google.com/search?q=tian+bakes" target="_blank" class="text-pink-600 underline">here</a></p>
+
+      <div class="space-y-6">
+        <div class="bg-white p-4 rounded shadow">
+          <p class="font-semibold text-pink-600">⭐ ⭐ ⭐ ⭐ ⭐ Richard</p>
+          <p>Ordered a cake for our birthday, we wanted a snickers flavour. We were amazed, the cake was so soft and moist and the filling really was better than snickers. We will order again for ourselves and friends, can we get a discount?? Haha, thanks!</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <p class="font-semibold text-pink-600">⭐ ⭐ ⭐ ⭐ ⭐ Paula Chambers</p>
+          <p>This cake will be the second our family has purchased from Tian Bakes, and yet again, we were very satisfied with our creation. By far the best vegan cake we have tasted so far, and honestly, we have tried so many cakes from different …</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <p class="font-semibold text-pink-600">⭐ ⭐ ⭐ ⭐ ⭐ Nadia Dendoune</p>
+          <p>The cake for our son’s birthday was absolutely perfect – beautifully decorated, delicious, and a big hit with all the kids and adults alike!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-white py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold text-pink-600 mb-6">Get in Touch</h3>
+      <p class="text-lg text-gray-700 mb-6">
+        Want to order a cake or ask a question? Reach us directly:
+      </p>
+
+      <p class="text-gray-800 font-semibold mb-4">Address: CR4 Mitcham, London, UK</p>
+      <iframe src="https://www.google.com/maps?q=CR4+Mitcham+London&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" class="mb-6"></iframe>
+
+      <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-10 text-gray-800 text-lg">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-envelope text-pink-600"></i>
+          <span>tianbakes@outlook.com</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-phone text-green-600"></i>
+          <span>+44 7555 207967</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fab fa-instagram text-pink-500"></i>
+          <a href="https://www.instagram.com/tian_bakes/" target="_blank">Instagram</a>
+        </div>
+        <div class="flex items-center space-x-2">
+          <i class="fab fa-facebook text-blue-600"></i>
+          <a href="https://www.facebook.com/TianBakes" target="_blank">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-pink-600 text-white py-6 text-center">
+    <p>&copy; 2025 Tian Bakes | Bespoke Cakes, Cupcakes & Cookies</p>
+  </footer>
+
+  <!-- Floating contact icons -->
+  <div class="contact-icons">
+    <a href="mailto:tianbakes@outlook.com"><i class="fas fa-envelope"></i></a>
+    <a href="tel:+447555207967"><i class="fas fa-phone"></i></a>
+    <a href="https://www.instagram.com/tian_bakes/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/TianBakes" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
 
 </body>
 </html>
