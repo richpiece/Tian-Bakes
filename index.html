@@ -5,9 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tian Bakes | Bespoke Cakes</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> <!-- nicer navbar font -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:title" content="Tian Bakes | Bespoke Cakes, Cupcakes & Cookies">
+  <meta property="og:description" content="Handcrafted cakes, cupcakes, and cookies for all occasions. Delivered across South London.">
+  <meta property="og:image" content="https://www.tianbakes.co.uk/background.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tianbakes.co.uk">
+
   <style>
     .contact-icons {
       position: fixed;
@@ -33,6 +43,25 @@
       background: #f3f4f6;
       transform: scale(1.1);
     }
+    /* Navbar gradient buttons */
+    .nav-btn {
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(90deg, #f9a8d4, #f472b6);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .nav-btn:hover {
+      transform: scale(1.1);
+      filter: brightness(1.1);
+    }
+    /* Hero subtitle */
+    .hero-subtitle {
+      font-family: 'Dancing Script', cursive !important;
+    }
   </style>
 </head>
 <body class="font-sans text-gray-800 scroll-smooth">
@@ -42,10 +71,10 @@
   <div class="container mx-auto flex justify-between items-center py-4 px-6">
     <img src="logo.png" alt="Tian Bakes Logo" class="h-16">
     <div class="space-x-4">
-      <a href="#about" class="px-3 py-2 font-semibold text-gray-700 rounded transition duration-300 hover:bg-pink-100 hover:text-pink-600">About</a>
-      <a href="#products" class="px-3 py-2 font-semibold text-gray-700 rounded transition duration-300 hover:bg-pink-100 hover:text-pink-600">Products</a>
-      <a href="#reviews" class="px-3 py-2 font-semibold text-gray-700 rounded transition duration-300 hover:bg-pink-100 hover:text-pink-600">Reviews</a>
-      <a href="#contact" class="px-3 py-2 font-semibold text-gray-700 rounded transition duration-300 hover:bg-pink-100 hover:text-pink-600">Contact</a>
+      <a href="#about" class="nav-btn">About</a>
+      <a href="#products" class="nav-btn">Products</a>
+      <a href="#reviews" class="nav-btn">Reviews</a>
+      <a href="#contact" class="nav-btn">Contact</a>
     </div>
   </div>
 </nav>
@@ -56,7 +85,7 @@
     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
     <div class="relative z-10">
       <h1 class="text-6xl font-bold text-white">Tian Bakes</h1>
-      <p class="text-3xl md:text-4xl mt-2 font-bold text-pink-100 drop-shadow-md" style="font-family: 'Dancing Script', cursive;">
+      <p class="text-3xl md:text-4xl mt-2 hero-subtitle font-bold text-pink-100 drop-shadow-md">
         Bespoke Cakes and Bakes
       </p>
     </div>
@@ -78,17 +107,14 @@
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold mb-12 text-pink-600">Our Products</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Cakes -->
         <div class="bg-white shadow-md rounded-lg p-6">
           <h3 class="text-xl font-semibold mb-2">Cakes</h3>
           <img src="cakes.png" alt="Cakes" class="w-full h-48 object-cover rounded">
         </div>
-        <!-- Cupcakes -->
         <div class="bg-white shadow-md rounded-lg p-6">
           <h3 class="text-xl font-semibold mb-2">Cupcakes</h3>
           <img src="cupcakes.png" alt="Cupcakes" class="w-full h-48 object-cover rounded">
         </div>
-        <!-- Cookies -->
         <div class="bg-white shadow-md rounded-lg p-6">
           <h3 class="text-xl font-semibold mb-2">Cake slices</h3>
           <img src="cakeslices.png" alt="Cookies" class="w-full h-48 object-cover rounded">
@@ -112,8 +138,6 @@
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold mb-12 text-pink-600">Customer Reviews</h2>
       <div class="space-y-8 max-w-3xl mx-auto">
-        
-        <!-- Paula -->
         <div class="bg-white p-6 rounded-lg shadow">
           <p class="text-lg italic">"This cake will be the second my family has purchased from Tian Bakes, and yet again, we were very satisfied with her creation. By far the best vegan cake we have tasted so far, and honestly, we have tried so many cakes from different …"</p>
           <div class="flex space-x-4 mt-4 justify-center">
@@ -121,23 +145,19 @@
           </div>
           <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Paula C</p>
         </div>
-
-        <!-- Chanelle -->
         <div class="bg-white p-6 rounded-lg shadow">
           <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn’t even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter’s birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn’t a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
           <div class="flex space-x-4 mt-4 justify-center">
-            <img src="Chanelle.png" alt="Nadia Review" class="w-32 h-32 object-cover rounded">
-            <img src="Chanelle1.png" alt="Nadia Review" class="w-32 h-32 object-cover rounded">
+            <img src="Chanelle.png" alt="Chanelle Review 1" class="w-32 h-32 object-cover rounded">
+            <img src="Chanelle1.png" alt="Chanelle Review 2" class="w-32 h-32 object-cover rounded">
           </div>
           <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Chanelle D</p>
         </div>
-
-        <!-- Ellie -->
         <div class="bg-white p-6 rounded-lg shadow">
           <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn’t even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my …"</p>
           <div class="flex space-x-4 mt-4 justify-center">
-            <img src="Ellie.png" alt="Chanelle Review 1" class="w-32 h-32 object-cover rounded">
-            <img src="Ellie1.png" alt="Chanelle Review 2" class="w-32 h-32 object-cover rounded">
+            <img src="Ellie.png" alt="Ellie Review 1" class="w-32 h-32 object-cover rounded">
+            <img src="Ellie1.png" alt="Ellie Review 2" class="w-32 h-32 object-cover rounded">
           </div>
           <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Ellie W</p>
         </div>
