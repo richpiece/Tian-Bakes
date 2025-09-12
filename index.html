@@ -163,50 +163,65 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="bg-white py-16">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold text-pink-600 mb-6">Get in Touch</h3>
-      <p class="text-lg text-gray-700 mb-6">Want to order a cake or ask a question? Reach us directly:</p>
-      <p class="text-gray-800 font-semibold mb-4">Address: CR4 Mitcham, London, UK</p>
-      <iframe src="https://www.google.com/maps?q=CR4+Mitcham+London&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" class="mb-6"></iframe>
+<!-- Contact Section -->
+<section id="contact" class="bg-white py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-pink-600 mb-6 text-center">Get in Touch</h3>
+    <p class="text-lg text-gray-700 mb-6 text-center">Want to order a cake or ask a question? Reach us directly:</p>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Left: Contact Form -->
+      <div>
+        <form action="https://formspree.io/f/mzzawgav" method="POST" class="space-y-4 bg-pink-50 p-6 rounded-lg shadow">
+          <input type="text" name="name" placeholder="Your Name" required
+            class="w-full px-4 py-2 rounded border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400">
+          <input type="email" name="_replyto" placeholder="Your Email" required
+            class="w-full px-4 py-2 rounded border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400">
+          <textarea name="message" placeholder="Your Message" rows="5" required
+            class="w-full px-4 py-2 rounded border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+          <button type="submit"
+            class="w-full bg-pink-600 text-white px-6 py-3 rounded hover:bg-pink-700 transition font-semibold">
+            Send Message
+          </button>
+        </form>
+      </div>
 
-      <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-10 text-gray-800 text-lg">
-        <div class="flex items-center space-x-2">
-          <i class="fas fa-envelope text-pink-600"></i>
-          <span>tianbakes@outlook.com</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <i class="fas fa-phone text-green-600"></i>
-          <span>+44 7555 207967</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <i class="fab fa-instagram text-pink-500"></i>
-          <a href="https://www.instagram.com/tian_bakes/" target="_blank">Instagram</a>
-        </div>
-        <div class="flex items-center space-x-2">
-          <i class="fab fa-facebook text-blue-600"></i>
-          <a href="https://www.facebook.com/TianBakes" target="_blank">Facebook</a>
+      <!-- Right: Map + Contact Info -->
+      <div class="flex flex-col space-y-6">
+        <p class="text-gray-800 font-semibold">Address: CR4 Mitcham, London, UK</p>
+        <iframe src="https://www.google.com/maps?q=CR4+Mitcham+London&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg shadow"></iframe>
+        
+        <div class="flex flex-col space-y-2 text-gray-800 text-lg">
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-envelope text-pink-600"></i>
+            <span>tianbakes@outlook.com</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-phone text-green-600"></i>
+            <span>+44 7555 207967</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="fab fa-instagram text-pink-500"></i>
+            <a href="https://www.instagram.com/tian_bakes/" target="_blank">Instagram</a>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="fab fa-facebook text-blue-600"></i>
+            <a href="https://www.facebook.com/TianBakes" target="_blank">Facebook</a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-pink-600 text-white py-6 text-center">
-    <p>&copy; 2025 Tian Bakes | Bespoke Cakes, Cupcakes & Cookies</p>
-  </footer>
-
-  <!-- Floating contact icons -->
-  <div class="contact-icons">
-    <a href="mailto:tianbakes@outlook.com"><i class="fas fa-envelope"></i></a>
-    <a href="tel:+447555207967"><i class="fas fa-phone"></i></a>
-    <a href="https://www.instagram.com/tian_bakes/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/TianBakes" target="_blank"><i class="fab fa-facebook"></i></a>
   </div>
+</section>
+<!-- Footer -->
+<footer class="bg-pink-600 text-white py-6 text-center">
+  <p>&copy; 2025 Tian Bakes | Bespoke Cakes and Bakes</p>
+</footer>
 
-</body>
-</html>
-
-
-
+<!-- Floating contact icons -->
+<div class="contact-icons">
+  <a href="mailto:tianbakes@outlook.com"><i class="fas fa-envelope"></i></a>
+  <a href="tel:+447555207967"><i class="fas fa-phone"></i></a>
+  <a href="https://www.instagram.com/tian_bakes/" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.facebook.com/TianBakes" target="_blank"><i class="fab fa-facebook"></i></a>
+</div>
