@@ -119,6 +119,56 @@
     </div>
   </section>
 
+<!-- Gallery Section -->
+<section id="gallery" class="py-16 px-6 bg-gray-50">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-12 text-pink-600">Some of our work</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <img src="gallery1.png" alt="Cake 1" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+      <img src="gallery2.png" alt="Cake 2" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+      <img src="gallery3.png" alt="Cake 3" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+      <img src="gallery4.png" alt="Cake 4" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+      <img src="gallery5.png" alt="Cake 5" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+      <img src="gallery6.png" alt="Cake 6" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+      <img src="gallery7.png" alt="Cake 7" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+      <img src="gallery8.png" alt="Cake 8" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+      <img src="gallery9.png" alt="Cake 9" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+      <img src="gallery10.png" alt="Cake 10" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+  <span id="closeLightbox" class="absolute top-6 right-6 text-white text-3xl cursor-pointer">&times;</span>
+  <img id="lightboxImg" src="" class="max-h-[80%] max-w-[90%] rounded shadow-lg">
+</div>
+
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const closeLightbox = document.getElementById("closeLightbox");
+
+  // Handle both gallery + review images
+  document.querySelectorAll(".gallery-img, .review-img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.remove("hidden");
+    });
+  });
+
+  closeLightbox.addEventListener("click", () => {
+    lightbox.classList.add("hidden");
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.add("hidden");
+    }
+  });
+</script>
+
  <!-- Embedded TikTok Video -->
   <section id="featured" class="py-16 bg-white">
     <div class="max-w-5xl mx-auto px-6 text-center">
@@ -136,7 +186,7 @@
       <div class="space-y-8 max-w-3xl mx-auto">
         <!-- Paula -->
         <div class="bg-white p-6 rounded-lg shadow">
-          <p class="text-lg italic">"This cake will be the second my family has purchased from Tians Bakes, and yet again, we were very satisfied with her creation. By far the best vegan cake we have tasted so far, and honestly, we have tried so many cakes from different brands. All our guests couldn't stop complimenting the delicious cake. Heard some positive comments on how tasty the icing was. 100% perfect, thank you. I would highly recommend everyone give her cakes a chance and get one for an upcoming special occasion."</p>
+          <p class="text-lg italic">"This cake will be the second my family has purchased from Tian Bakes, and yet again, we were very satisfied with her creation. By far the best vegan cake we have tasted so far, and honestly, we have tried so many cakes from different …"</p>
           <div class="flex space-x-4 mt-4 justify-center">
             <img src="Paula.png" alt="Paula Review" class="w-32 h-32 object-cover rounded">
           </div>
@@ -151,6 +201,7 @@
           </div>
           <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Chanelle D</p>
         </div>
+        <!-- Ellie -->
         <div class="bg-white p-6 rounded-lg shadow">
           <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn’t even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter’s birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn’t a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
           <div class="flex space-x-4 mt-4 justify-center">
@@ -162,6 +213,20 @@
       </div>
     </div>
   </section>
+
+       <!-- More Reviews Button -->
+      <div class="mt-10 flex justify-center">
+        <a href="https://www.google.com/search?sca_esv=0552b0ba02155725&rlz=1C1GCEA_enGB1141GB1141&sxsrf=AE3TifMZLDDkvlAP0qDtlwEVS_7E48jetA:1758212250020&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwYkR9AP8mcgSQzMxpDxr5H6_vunpz2SwRUDTRb3kRdyxamZzWb9yhnpxRrOK-zI1bCJkmTI6_yr7fRKHhWZokVM4WDr&q=Tian+Bakes+Reviews&sa=X&ved=2ahUKEwjNuuiE2-KPAxW2W0EAHVLwNc8Q0bkNegQIHxAD&biw=1229&bih=556&dpr=1.56" 
+           target="_blank" 
+           class="navbar-button cursive">
+          More Reviews →
+        </a>
+      </div>
+     
+    </div>
+  </div>
+</section>
+
 
 <!-- Contact Section -->
 <section id="contact" class="bg-white py-16">
@@ -224,5 +289,25 @@
   <a href="tel:+447555207967"><i class="fas fa-phone"></i></a>
   <a href="https://www.instagram.com/tian_bakes/" target="_blank"><i class="fab fa-instagram"></i></a>
   <a href="https://www.facebook.com/TianBakes" target="_blank"><i class="fab fa-facebook"></i></a>
-
 </div>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+  <span id="close-lightbox" class="absolute top-6 right-8 text-white text-4xl cursor-pointer">&times;</span>
+  <img id="lightbox-img" src="" alt="Expanded view" class="max-h-[90%] max-w-[90%] rounded shadow-lg">
+</div>
+
+<!-- Lightbox Script -->
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeLightbox = document.getElementById("close-lightbox");
+
+  // Open lightbox for gallery and review images
+  document.querySelectorAll(".gallery-img, .review-img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.remove("hidden");
+      lightbox.classList.add("flex");
+    });
+  });
