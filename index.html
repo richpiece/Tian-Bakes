@@ -37,6 +37,42 @@
     .contact-icons a i {
       font-size: 20px;
     }
+    
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+      .contact-icons {
+        bottom: 15px;
+        right: 15px;
+        gap: 12px;
+      }
+      .contact-icons a {
+        width: 45px;
+        height: 45px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      }
+      .contact-icons a i {
+        font-size: 18px;
+      }
+      .contact-icons a:hover {
+        transform: scale(1.05);
+      }
+    }
+    
+    /* Extra small screens */
+    @media (max-width: 480px) {
+      .contact-icons {
+        bottom: 12px;
+        right: 12px;
+        gap: 10px;
+      }
+      .contact-icons a {
+        width: 42px;
+        height: 42px;
+      }
+      .contact-icons a i {
+        font-size: 16px;
+      }
+    }
     .contact-icons a:nth-child(1) i { color: #dc2626; } /* email - red */
     .contact-icons a:nth-child(2) i { color: #059669; } /* phone - green */
     .contact-icons a:nth-child(3) i { color: #e11d48; } /* instagram - pink */
