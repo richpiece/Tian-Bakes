@@ -14,32 +14,42 @@
       right: 20px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 15px;
       z-index: 1000;
     }
     .contact-icons a {
       background: white;
       border-radius: 50%;
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease, background 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      text-decoration: none;
     }
     .contact-icons a:hover {
       background: #f3f4f6;
       transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
     }
+    .contact-icons a i {
+      font-size: 20px;
+    }
+    .contact-icons a:nth-child(1) i { color: #dc2626; } /* email - red */
+    .contact-icons a:nth-child(2) i { color: #059669; } /* phone - green */
+    .contact-icons a:nth-child(3) i { color: #e11d48; } /* instagram - pink */
+    .contact-icons a:nth-child(4) i { color: #1d4ed8; } /* facebook - blue */
+    
     .cursive {
       font-family: 'Dancing Script', cursive;
     }
     .navbar-button {
       font-weight: 700;
-      font-size: 0.875rem; /* slightly smaller */
-      padding: 0.375rem 0.75rem; /* slightly smaller */
-      border: 2px solid #ec4899; /* pink border */
+      font-size: 0.875rem;
+      padding: 0.375rem 0.75rem;
+      border: 2px solid #ec4899;
       border-radius: 0.5rem;
       color: #ec4899;
       transition: all 0.3s ease;
@@ -123,7 +133,7 @@
 
     slides[currentSlide].classList.remove("opacity-0");
     slides[currentSlide].classList.add("opacity-100");
-  }, 4000); // 2 seconds per image
+  }, 4000); // 4 seconds per image
 </script>
 
 
@@ -178,36 +188,6 @@
   </div>
 </section>
 
-<!-- Lightbox Modal -->
-<div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-  <span id="closeLightbox" class="absolute top-6 right-6 text-white text-3xl cursor-pointer">&times;</span>
-  <img id="lightboxImg" src="" class="max-h-[80%] max-w-[90%] rounded shadow-lg">
-</div>
-
-<script>
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const closeLightbox = document.getElementById("closeLightbox");
-
-  // Handle both gallery + review images
-  document.querySelectorAll(".gallery-img, .review-img").forEach(img => {
-    img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
-      lightbox.classList.remove("hidden");
-    });
-  });
-
-  closeLightbox.addEventListener("click", () => {
-    lightbox.classList.add("hidden");
-  });
-
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      lightbox.classList.add("hidden");
-    }
-  });
-</script>
-
  <!-- Embedded TikTok Video -->
   <section id="featured" class="py-16 bg-white">
     <div class="max-w-5xl mx-auto px-6 text-center">
@@ -227,7 +207,7 @@
         <div class="bg-white p-6 rounded-lg shadow">
           <p class="text-lg italic">"This cake will be the second my family has purchased from Tian Bakes, and yet again, we were very satisfied with her creation. By far the best vegan cake we have tasted so far, and honestly, we have tried so many cakes from different …"</p>
           <div class="flex space-x-4 mt-4 justify-center">
-            <img src="Paula.png" alt="Paula Review" class="w-32 h-32 object-cover rounded">
+            <img src="Paula.png" alt="Paula Review" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
           </div>
           <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Paula C</p>
         </div>
@@ -235,8 +215,8 @@
         <div class="bg-white p-6 rounded-lg shadow">
           <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn't even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter's birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn't a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
           <div class="flex space-x-4 mt-4 justify-center">
-            <img src="Chanelle.png" alt="Chanelle Review 1" class="w-32 h-32 object-cover rounded">
-            <img src="Chanelle1.png" alt="Chanelle Review 2" class="w-32 h-32 object-cover rounded">
+            <img src="Chanelle.png" alt="Chanelle Review 1" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
+            <img src="Chanelle1.png" alt="Chanelle Review 2" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
           </div>
           <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Chanelle D</p>
         </div>
@@ -244,28 +224,23 @@
         <div class="bg-white p-6 rounded-lg shadow">
           <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn't even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter's birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn't a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
           <div class="flex space-x-4 mt-4 justify-center">
-            <img src="Ellie.png" alt="Ellie Review 1" class="w-32 h-32 object-cover rounded">
-            <img src="Ellie1.png" alt="Ellie Review 2" class="w-32 h-32 object-cover rounded">
+            <img src="Ellie.png" alt="Ellie Review 1" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
+            <img src="Ellie1.png" alt="Ellie Review 2" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
           </div>
           <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Ellie W</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- More Reviews + Hygiene Rating -->
-<div class="mt-6 flex justify-center items-center space-x-4">
-  <a href="https://www.google.com/search?sca_esv=0552b0ba02155725&rlz=1C1GCEA_enGB1141GB1141&sxsrf=AE3TifMZLDDkvlAP0qDtlwEVS_7E48jetA:1758212250020&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwYkR9AP8mcgSQzMxpDxr5H6_vunpz2SwRUDTRb3kRdyxamZzWb9yhnpxRrOK-zI1bCJkmTI6_yr7fRKHhWZokVM4WDr&q=Tian+Bakes+Reviews&sa=X&ved=2ahUKEwjNuuiE2-KPAxW2W0EAHVLwNc8Q0bkNegQIHxAD&biw=1229&bih=556&dpr=1.56" 
-     target="_blank" 
-     class="text-pink-600 font-bold hover:underline">
-    More Reviews
-  </a>
-</div>
-     
+    
+    <!-- More Reviews + Hygiene Rating -->
+    <div class="mt-6 flex justify-center items-center space-x-4">
+      <a href="https://www.google.com/search?sca_esv=0552b0ba02155725&rlz=1C1GCEA_enGB1141GB1141&sxsrf=AE3TifMZLDDkvlAP0qDtlwEVS_7E48jetA:1758212250020&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwYkR9AP8mcgSQzMxpDxr5H6_vunpz2SwRUDTRb3kRdyxamZzWb9yhnpxRrOK-zI1bCJkmTI6_yr7fRKHhWZokVM4WDr&q=Tian+Bakes+Reviews&sa=X&ved=2ahUKEwjNuuiE2-KPAxW2W0EAHVLwNc8Q0bkNegQIHxAD&biw=1229&bih=556&dpr=1.56" 
+         target="_blank" 
+         class="text-pink-600 font-bold hover:underline">
+        More Reviews
+      </a>
     </div>
-  </div>
-</section>
-
+  </section>
 
 <!-- Contact Section -->
 <section id="contact" class="bg-white py-16">
@@ -317,6 +292,7 @@
     </div>
   </div>
 </section>
+
 <!-- Footer -->
 <footer class="bg-pink-600 text-white py-6 text-center">
   <p>&copy; 2025 Tian Bakes | Bespoke Cakes and Bakes</p>
@@ -324,19 +300,27 @@
 
 <!-- Floating contact icons -->
 <div class="contact-icons">
-  <a href="mailto:tianbakes@outlook.com"><i class="fas fa-envelope"></i></a>
-  <a href="tel:+447555207967"><i class="fas fa-phone"></i></a>
-  <a href="https://www.instagram.com/tian_bakes/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.facebook.com/TianBakes" target="_blank"><i class="fab fa-facebook"></i></a>
+  <a href="mailto:tianbakes@outlook.com" title="Email us">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="tel:+447555207967" title="Call us">
+    <i class="fas fa-phone"></i>
+  </a>
+  <a href="https://www.instagram.com/tian_bakes/" target="_blank" title="Follow on Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.facebook.com/TianBakes" target="_blank" title="Like on Facebook">
+    <i class="fab fa-facebook"></i>
+  </a>
 </div>
 
 <!-- Lightbox Modal -->
 <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
-  <span id="close-lightbox" class="absolute top-6 right-8 text-white text-4xl cursor-pointer">&times;</span>
+  <span id="close-lightbox" class="absolute top-6 right-8 text-white text-4xl cursor-pointer hover:text-gray-300">&times;</span>
   <img id="lightbox-img" src="" alt="Expanded view" class="max-h-[90%] max-w-[90%] rounded shadow-lg">
 </div>
 
-<!-- Lightbox Script -->
+<!-- JavaScript -->
 <script>
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -351,13 +335,23 @@
     });
   });
 
+  // Close lightbox
   closeLightbox.addEventListener("click", () => {
     lightbox.classList.add("hidden");
     lightbox.classList.remove("flex");
   });
 
+  // Close lightbox when clicking outside the image
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) {
+      lightbox.classList.add("hidden");
+      lightbox.classList.remove("flex");
+    }
+  });
+
+  // Close lightbox with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !lightbox.classList.contains("hidden")) {
       lightbox.classList.add("hidden");
       lightbox.classList.remove("flex");
     }
