@@ -94,6 +94,35 @@
       background-color: #fce7f3;
       color: #be185d;
     }
+    
+    /* Mobile navbar adjustments */
+    @media (max-width: 768px) {
+      .navbar-button {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+      }
+      nav .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      nav img {
+        height: 3rem !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .navbar-button {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+      }
+      nav .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+      nav img {
+        height: 2.5rem !important;
+      }
+    }
   </style>
 
   <!-- Open Graph for link previews -->
@@ -110,12 +139,19 @@
 
  <!-- Navbar -->
 <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-  <div class="container mx-auto flex justify-between items-center py-4 px-6">
-    <div class="flex items-center space-x-4">
-      <img src="logo.png" alt="Tian Bakes Logo" class="h-16">
+  <div class="container mx-auto flex items-center justify-between py-4 px-6">
+    <!-- Left: Rating -->
+    <div class="flex-shrink-0">
       <img src="rating.png" alt="Hygiene Rating" class="h-16 w-auto" />
     </div>
-    <div class="space-x-2">
+    
+    <!-- Center: Logo -->
+    <div class="flex-shrink-0">
+      <img src="logo.png" alt="Tian Bakes Logo" class="h-16">
+    </div>
+    
+    <!-- Right: Navigation -->
+    <div class="flex space-x-2">
       <a href="#about" class="navbar-button cursive">About</a>
       <a href="#products" class="navbar-button cursive">Products</a>
       <a href="#reviews" class="navbar-button cursive">Reviews</a>
