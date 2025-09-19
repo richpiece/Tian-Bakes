@@ -65,7 +65,10 @@
  <!-- Navbar -->
 <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
   <div class="container mx-auto flex justify-between items-center py-4 px-6">
-    <img src="logo.png" alt="Tian Bakes Logo" class="h-16">
+    <div class="flex items-center space-x-4">
+      <img src="logo.png" alt="Tian Bakes Logo" class="h-16">
+      <img src="rating.png" alt="Hygiene Rating" class="h-16 w-auto" />
+    </div>
     <div class="space-x-2">
       <a href="#about" class="navbar-button cursive">About</a>
       <a href="#products" class="navbar-button cursive">Products</a>
@@ -230,7 +233,7 @@
         </div>
         <!-- Chanelle -->
         <div class="bg-white p-6 rounded-lg shadow">
-          <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn’t even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter’s birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn’t a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
+          <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn't even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter's birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn't a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
           <div class="flex space-x-4 mt-4 justify-center">
             <img src="Chanelle.png" alt="Chanelle Review 1" class="w-32 h-32 object-cover rounded">
             <img src="Chanelle1.png" alt="Chanelle Review 2" class="w-32 h-32 object-cover rounded">
@@ -239,7 +242,7 @@
         </div>
         <!-- Ellie -->
         <div class="bg-white p-6 rounded-lg shadow">
-          <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn’t even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter’s birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn’t a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
+          <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn't even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter's birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn't a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
           <div class="flex space-x-4 mt-4 justify-center">
             <img src="Ellie.png" alt="Ellie Review 1" class="w-32 h-32 object-cover rounded">
             <img src="Ellie1.png" alt="Ellie Review 2" class="w-32 h-32 object-cover rounded">
@@ -254,10 +257,9 @@
 <div class="mt-6 flex justify-center items-center space-x-4">
   <a href="https://www.google.com/search?sca_esv=0552b0ba02155725&rlz=1C1GCEA_enGB1141GB1141&sxsrf=AE3TifMZLDDkvlAP0qDtlwEVS_7E48jetA:1758212250020&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwYkR9AP8mcgSQzMxpDxr5H6_vunpz2SwRUDTRb3kRdyxamZzWb9yhnpxRrOK-zI1bCJkmTI6_yr7fRKHhWZokVM4WDr&q=Tian+Bakes+Reviews&sa=X&ved=2ahUKEwjNuuiE2-KPAxW2W0EAHVLwNc8Q0bkNegQIHxAD&biw=1229&bih=556&dpr=1.56" 
      target="_blank" 
-     class="text-pink-600 font-semibold hover:underline">
+     class="text-pink-600 font-bold hover:underline">
     More Reviews
   </a>
-  <img src="rating.png" alt="Hygiene Rating" class="h-16 w-auto" />
 </div>
      
     </div>
@@ -348,3 +350,19 @@
       lightbox.classList.add("flex");
     });
   });
+
+  closeLightbox.addEventListener("click", () => {
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.add("hidden");
+      lightbox.classList.remove("flex");
+    }
+  });
+</script>
+
+</body>
+</html>
