@@ -260,7 +260,7 @@
         </button>
     </div>
 </header>
-<div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between">
+<div id="mobile-menu" class="fixed inset-0 bg-black z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between">
     <div class="p-6">
         <button id="close-menu" class="absolute top-4 right-4 text-gray-700">
             <i class="fas fa-times text-2xl"></i>
@@ -343,11 +343,11 @@
                 </div>
                 <div class="bg-white shadow-md rounded-lg p-6">
                     <h3 class="text-xl font-semibold mb-2">Cupcakes</h3>
-                    <img src="cupcakes.png" alt="Cupcakes" class="w-full h-48 object-cover rounded">
+                    <img id="cupcakes-image" src="cupcakes.png" alt="Cupcakes" class="w-full h-48 object-cover rounded cursor-pointer">
                 </div>
                 <div class="bg-white shadow-md rounded-lg p-6">
                     <h3 class="text-xl font-semibold mb-2">Cake slices</h3>
-                    <img src="cakeslices.png" alt="Cake slices" class="w-full h-48 object-cover rounded">
+                    <img id="slices-image" src="cakeslices.png" alt="Cake slices" class="w-full h-48 object-cover rounded cursor-pointer">
                 </div>
             </div>
         </div>
@@ -513,6 +513,46 @@
             </p>
         </div>
     </div>
+    <div id="cupcakes-modal" class="fixed inset-0 hidden flex items-center justify-center z-[1001] modal">
+        <div class="bg-white p-8 rounded-lg shadow-xl relative modal-content">
+            <button id="close-cupcakes-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <h3 class="text-3xl font-bold mb-4 text-pink-600 text-center">Delicious Custom Cupcakes Made Just for You</h3>
+            <p class="text-lg mb-4 text-gray-700">
+                From classic vanilla buttercream to rich chocolate ganache, salted caramel to fresh strawberry – our handcrafted cupcakes are the perfect sweet treat for any occasion.
+            </p>
+            <p class="text-lg mb-4 text-gray-700">
+                Choose your favorite flavors and let us create beautiful custom designs to match your celebration. Whether it's elegant floral decorations for a bridal shower, colorful sprinkles for a child's birthday, or sophisticated corporate branding for office events, we'll make each cupcake as special as your moment.
+            </p>
+            <p class="text-lg mb-4 text-gray-700">
+                Perfect for parties, office celebrations, baby showers, or sharing something delightful with friends and family. Each batch is freshly baked to order with premium ingredients and finished with our signature attention to detail.
+            </p>
+            <p class="text-lg text-gray-700 font-bold mt-4">
+                Minimum order of 12 cupcakes.
+           </p>
+        </div>
+    </div>
+    <div id="slices-modal" class="fixed inset-0 hidden flex items-center justify-center z-[1001] modal">
+        <div class="bg-white p-8 rounded-lg shadow-xl relative modal-content">
+            <button id="close-slices-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <h3 class="text-3xl font-bold mb-4 text-pink-600 text-center">Can't Decide on Just One Flavor? Try Our Mixed Cake Slice Selection!</h3>
+            <p class="text-lg mb-4 text-gray-700">
+                Why choose between rich chocolate fudge, zesty lemon drizzle, and classic Victoria sponge when you can have them all? Our individual cake slices are perfect for those who love variety or want to sample different flavors before placing a larger order.
+            </p>
+            <p class="text-lg mb-4 text-gray-700">
+                Each slice is generously cut from our full-sized cakes, featuring the same premium ingredients and beautiful presentation you'd expect from our bespoke creations. Mix and match your favorites – from indulgent red velvet to light carrot cake, tangy key lime to decadent salted caramel.
+            </p>
+            <p class="text-lg text-gray-700">
+                Ideal for office treats, small gatherings, dessert tables, or simply treating yourself to something special. Why settle for one flavor when you can create your own delicious selection?
+            </p>
+            <p class="text-lg text-gray-700 font-bold mt-4">
+                Available in various flavor combinations.
+            </p>
+        </div>
+    </div>
     <script>
       const galleryImages = document.querySelectorAll(".gallery-img");
       const lightbox = document.getElementById("lightbox");
@@ -620,6 +660,50 @@
         cakesModal.addEventListener('click', (e) => {
             if (e.target.id === 'cakes-modal') {
                 cakesModal.classList.add('hidden');
+            }
+        });
+
+        // Cupcakes Modal Functionality
+        const cupcakesImage = document.getElementById('cupcakes-image');
+        const cupcakesModal = document.getElementById('cupcakes-modal');
+        const closeCupcakesModal = document.getElementById('close-cupcakes-modal');
+
+        // Show the modal when the "Cupcakes" image is clicked
+        cupcakesImage.addEventListener('click', () => {
+            cupcakesModal.classList.remove('hidden');
+        });
+
+        // Hide the modal when the close button is clicked
+        closeCupcakesModal.addEventListener('click', () => {
+            cupcakesModal.classList.add('hidden');
+        });
+
+        // Hide the modal when clicking outside the content
+        cupcakesModal.addEventListener('click', (e) => {
+            if (e.target.id === 'cupcakes-modal') {
+                cupcakesModal.classList.add('hidden');
+            }
+        });
+
+        // Slices Modal Functionality
+        const slicesImage = document.getElementById('slices-image');
+        const slicesModal = document.getElementById('slices-modal');
+        const closeSlicesModal = document.getElementById('close-slices-modal');
+
+        // Show the modal when the "Slices" image is clicked
+        slicesImage.addEventListener('click', () => {
+            slicesModal.classList.remove('hidden');
+        });
+
+        // Hide the modal when the close button is clicked
+        closeSlicesModal.addEventListener('click', () => {
+            slicesModal.classList.add('hidden');
+        });
+
+        // Hide the modal when clicking outside the content
+        slicesModal.addEventListener('click', (e) => {
+            if (e.target.id === 'slices-modal') {
+                slicesModal.classList.add('hidden');
             }
         });
     </script>
