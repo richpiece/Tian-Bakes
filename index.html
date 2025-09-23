@@ -207,32 +207,55 @@
     <meta property="og:title" content="Tian Bakes | Bespoke Cakes and Cupcakes" />
     <meta property="og:description" content="Handcrafted cakes, cupcakes, and cake slices baked fresh and delivered across South London." />
     <meta property="og:image" content="https://www.tianbakes.co.uk/background.png" />
-    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:width" content="1300" />
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://www.tianbakes.co.uk" />
     <meta property="og:type" content="website" />
 
-</head>
-<body class="font-sans text-gray-800 scroll-smooth">
+<!-- START: Top Header + Nav -->
+<header>
+  <!-- Banner -->
+  <div class="relative w-full">
+    <!-- Banner image -->
+    <img 
+      src="header-bg.png" 
+      alt="Tian Bakes Banner"
+      class="w-full h-56 md:h-72 object-cover object-center"
+    />
 
-    <nav class="bg-pink-50 shadow-md fixed w-full top-0 left-0 z-50">
-        <div class="container mx-auto flex items-center justify-between py-4 px-6">
-            <div class="flex-shrink-0">
-                <img src="rating.png" alt="Hygiene Rating" class="h-16 w-auto" />
-            </div>
-            
-            <div class="flex-shrink-0">
-                <img src="logo.png" alt="Tian Bakes Logo" class="h-16">
-            </div>
-            
-            <div class="flex space-x-2">
-                <a href="#about" class="navbar-button cursive">About</a>
-                <a href="#products" class="navbar-button cursive">Products</a>
-                <a href="#reviews" class="navbar-button cursive">Reviews</a>
-                <a href="#contact" class="navbar-button cursive">Contact</a>
-            </div>
-        </div>
-    </nav>
+
+    <!-- Content over the banner -->
+<div class="absolute inset-0 flex items-center px-6 md:px-12">
+  <!-- Right: Contact -->
+  <div class="ml-auto text-black text-sm md:text-base font-medium text-right">
+    <a href="mailto:tianbakes@outlook.com" class="flex items-center gap-2 hover:underline justify-end">
+      <i class="fas fa-envelope"></i>
+      <span class="hidden sm:inline">tianbakes@outlook.com</span>
+    </a>
+    <a href="tel:+447555207967" class="flex items-center gap-2 mt-1 hover:underline justify-end">
+      <i class="fas fa-phone"></i>
+      <span class="hidden sm:inline">+44 7555 207967</span>
+    </a>
+  </div>
+</div>
+
+<!-- Second header / Navigation -->
+<nav class="relative z-20 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-center space-x-6 font-medium text-gray-700">
+    <a href="#home" class="hover:text-pink-500">Home</a>
+    <a href="#products" class="hover:text-pink-500">Products</a>
+    <a href="#reviews" class="hover:text-pink-500">Reviews</a>
+    <a href="#contact" class="hover:text-pink-500">Contact</a>
+  </div>
+</nav>
+
+      </ul>
+    </div>
+  </nav>
+</header>
+<!-- END: Top Header + Nav -->
+
+
 
     <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
         <div id="slideshow" class="absolute inset-0 z-0">
@@ -249,9 +272,9 @@
         <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
 
         <div class="relative z-20">
-            <h1 class="text-6xl text-white flex items-center justify-center gap-3" style="font-family: 'Dosis ExtraBold';">
+            <h1 class="text-6xl text-white flex items-center justify-center gap-3" style="font-family: 'Dosis ExtraBold', cursive;">
                 Tian 
-                <span class="text-pink-300 animate-pulse">❤</span> 
+                <span class="text-pink-400 animate-pulse">❤</span> 
                 Bakes
             </h1>
 
@@ -422,7 +445,8 @@
     </section>
 
     <footer class="bg-pink-600 text-white py-6 text-center">
-        <p>© 2025 Tian Bakes | Bespoke Cakes and Bakes</p>
+ 
+        <p>  <!-- Left: Logo --> <img src="logo.png" alt="Tian Bakes Logo" class="h-10 md:h-14 mx-auto"> © 2025 Tian Bakes | Bespoke Cakes and Bakes</p>
     </footer>
 
     <div class="contact-icons">
@@ -516,5 +540,4 @@
     </script>
 
 </body>
-
 </html>
