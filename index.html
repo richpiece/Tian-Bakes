@@ -242,13 +242,14 @@
         </div>
     </nav>
 </header>
-<header class="md:hidden">
-    <div class="flex justify-between items-center px-4 py-3 bg-white shadow-md">
+<header class="md:hidden relative">
+    <img src="header-bg.png" alt="Header Background" class="absolute inset-0 w-full h-full object-cover z-0">
+    <div class="relative z-10 flex justify-between items-center px-4 py-3 text-white">
         <a href="#home" class="flex items-center space-x-2">
             <img src="logo.png" alt="Tian Bakes Logo" class="h-10">
-            <span class="text-2xl font-bold cursive text-pink-600">Tian Bakes</span>
+            <span class="text-2xl font-bold cursive">Tian Bakes</span>
         </a>
-        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+        <button id="menu-toggle" class="focus:outline-none">
             <i class="fas fa-bars text-2xl"></i>
         </button>
     </div>
