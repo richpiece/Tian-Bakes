@@ -212,48 +212,60 @@
     <meta property="og:url" content="https://www.tianbakes.co.uk" />
     <meta property="og:type" content="website" />
 
-<!-- START: Top Header + Nav -->
 <header>
-  <!-- Banner -->
-  <div class="relative w-full">
-    <!-- Banner image -->
-    <img 
-      src="header-bg.png" 
-      alt="Tian Bakes Banner"
-      class="w-full h-80 md:h-72 object-cover object-center"
-    />
+    <div class="relative w-full">
+        <img 
+            src="header-bg.png" 
+            alt="Tian Bakes Banner"
+            class="w-full h-80 md:h-72 object-cover object-center"
+        />
 
-
-    <!-- Content over the banner -->
-<div class="absolute inset-0 flex items-center px-6 md:px-12">
-  <!-- Top Right: Contact -->
-  <div class="ml-auto text-black text-sm md:text-base font-medium text-right">
-    <a href="mailto:tianbakes@outlook.com" class="flex items-center gap-2 hover:underline justify-end">
-      <i class="fas fa-envelope"></i>
-      <span class="hidden sm:inline">tianbakes@outlook.com</span>
-    </a>
-    <a href="tel:+447555207967" class="flex items-center gap-2 mt-1 hover:underline justify-end">
-      <i class="fas fa-phone"></i>
-      <span class="hidden sm:inline">+44 7555 207967</span>
-    </a>
-  </div>
-</div>
-
-<!-- Second header / Navigation -->
-<nav class="relative z-20 bg-white shadow-md">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-center space-x-6 font-medium text-gray-700">
-    <a href="#home" class="hover:text-pink-500">Home</a>
-    <a href="#products" class="hover:text-pink-500">Products</a>
-    <a href="#reviews" class="hover:text-pink-500">Reviews</a>
-    <a href="#contact" class="hover:text-pink-500">Contact</a>
-  </div>
-</nav>
-
-      </ul>
+        <div class="absolute inset-0 flex items-center px-6 md:px-12">
+            <div class="ml-auto text-black text-sm md:text-base font-medium text-right">
+                <a href="mailto:tianbakes@outlook.com" class="flex items-center gap-2 hover:underline justify-end">
+                    <i class="fas fa-envelope"></i>
+                    <span class="hidden sm:inline">tianbakes@outlook.com</span>
+                </a>
+                <a href="tel:+447555207967" class="flex items-center gap-2 mt-1 hover:underline justify-end">
+                    <i class="fas fa-phone"></i>
+                    <span class="hidden sm:inline">+44 7555 207967</span>
+                </a>
+            </div>
+        </div>
     </div>
-  </nav>
+    
+    <div class="flex justify-between items-center md:hidden px-4 py-3 bg-white shadow-md">
+        <a href="#home" class="flex items-center space-x-2">
+            <img src="logo.png" alt="Tian Bakes Logo" class="h-10">
+            <span class="text-2xl font-bold cursive text-pink-600">Tian Bakes</span>
+        </a>
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <nav class="relative z-20 bg-white shadow-md hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-center space-x-6 font-medium text-gray-700">
+            <a href="#home" class="hover:text-pink-500">Home</a>
+            <a href="#products" class="hover:text-pink-500">Products</a>
+            <a href="#reviews" class="hover:text-pink-500">Reviews</a>
+            <a href="#contact" class="hover:text-pink-500">Contact</a>
+        </div>
+    </nav>
 </header>
-<!-- END: Top Header + Nav -->
+<div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="p-6">
+        <button id="close-menu" class="absolute top-4 right-4 text-gray-700">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        <ul class="space-y-6 mt-16 text-center text-2xl font-semibold">
+            <li><a href="#home" class="block hover:text-pink-500">Home</a></li>
+            <li><a href="#products" class="block hover:text-pink-500">Products</a></li>
+            <li><a href="#reviews" class="block hover:text-pink-500">Reviews</a></li>
+            <li><a href="#contact" class="block hover:text-pink-500">Contact</a></li>
+        </ul>
+    </div>
+</div>
 
 
 
@@ -445,8 +457,8 @@
     </section>
 
     <footer class="bg-pink-600 text-white py-6 text-center">
- 
-        <p>  <!-- Left: Logo --> <img src="logo.png" alt="Tian Bakes Logo" class="h-10 md:h-14 mx-auto"> © 2025 Tian Bakes | Bespoke Cakes and Bakes</p>
+    
+        <p>  <img src="logo.png" alt="Tian Bakes Logo" class="h-10 md:h-14 mx-auto"> © 2025 Tian Bakes | Bespoke Cakes and Bakes</p>
     </footer>
 
     <div class="contact-icons">
@@ -537,6 +549,30 @@
           lightbox.style.display = "none";
         }
       });
+    </script>
+    
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+
+        // Open the menu when the hamburger button is clicked
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+        });
+
+        // Close the menu when the close button is clicked
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+
+        // Close the menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+            });
+        });
     </script>
 
 </body>
