@@ -202,6 +202,16 @@
           cursor: pointer;
           z-index: 10000;
         }
+
+        /* Modal specific styles */
+        .modal {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .modal-content {
+            width: 90%;
+            max-width: 600px;
+        }
+
     </style>
 
     <meta property="og:title" content="Tian Bakes | Bespoke Cakes and Cupcakes" />
@@ -242,8 +252,11 @@
         </div>
     </nav>
 </header>
-<header class="md:hidden relative h-28"> <img src="header-bg.png" alt="Header Background" class="absolute inset-0 w-full h-full object-cover object-center z-0">
-    <div class="relative z-10 flex justify-end items-center px-4 py-3 h-full"> <button id="menu-toggle" class="focus:outline-none text-white"> <i class="fas fa-bars text-2xl"></i>
+<header class="md:hidden relative h-28"> 
+    <img src="header-bg.png" alt="Header Background" class="absolute inset-0 w-full h-full object-cover object-center z-0">
+    <div class="relative z-10 flex justify-end items-center px-4 py-3 h-full"> 
+        <button id="menu-toggle" class="focus:outline-none text-white"> 
+            <i class="fas fa-bars text-2xl"></i>
         </button>
     </div>
 </header>
@@ -326,7 +339,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white shadow-md rounded-lg p-6">
                     <h3 class="text-xl font-semibold mb-2">Cakes</h3>
-                    <img src="cakes.png" alt="Cakes" class="w-full h-48 object-cover rounded">
+                    <img id="cakes-image" src="cakes.png" alt="Cakes" class="w-full h-48 object-cover rounded cursor-pointer">
                 </div>
                 <div class="bg-white shadow-md rounded-lg p-6">
                     <h3 class="text-xl font-semibold mb-2">Cupcakes</h3>
@@ -483,6 +496,23 @@
       </div>
     </div>
 
+    <div id="cakes-modal" class="fixed inset-0 hidden flex items-center justify-center z-[1001] modal">
+        <div class="bg-white p-8 rounded-lg shadow-xl relative modal-content">
+            <button id="close-cakes-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <h3 class="text-3xl font-bold mb-4 text-pink-600 text-center">Bespoke Cakes for Every Occasion</h3>
+            <p class="text-lg mb-4 text-gray-700">
+                Whether you're dreaming of an elegant single-tier celebration cake, a stunning two-tier centerpiece, or a show-stopping three-tier wedding masterpiece, we'll bring your vision to life.
+            </p>
+            <p class="text-lg mb-4 text-gray-700">
+                Tell us about your ideal cake – from rich chocolate indulgence to delicate vanilla sponge, zesty lemon to decadent red velvet. Share your design inspirations, color palette, or theme, and our skilled bakers will craft something uniquely yours.
+            </p>
+            <p class="text-lg text-gray-700">
+                Perfect for birthdays, farewell celebrations, anniversaries, weddings, or simply treating yourself to something extraordinary. Every cake is lovingly handmade to order, ensuring your special moment gets the attention it deserves.
+            </p>
+        </div>
+    </div>
     <script>
       const galleryImages = document.querySelectorAll(".gallery-img");
       const lightbox = document.getElementById("lightbox");
@@ -556,20 +586,41 @@
         const mobileLinks = document.querySelectorAll('#mobile-menu a');
 
         // Open the menu when the hamburger button is clicked
-        menuToggle.addEventListener('click', () => {
+        function openMenu() {
             mobileMenu.classList.remove('-translate-x-full');
-        });
+        }
 
-        // Close the menu when the close button is clicked
-        closeMenu.addEventListener('click', () => {
+        // Close the menu
+        function closeMenuFunc() {
             mobileMenu.classList.add('-translate-x-full');
+        }
+        
+        menuToggle.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenuFunc);
         });
 
-        // Close the menu when a link is clicked
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('-translate-x-full');
-            });
+        // Cakes Modal Functionality
+        const cakesImage = document.getElementById('cakes-image');
+        const cakesModal = document.getElementById('cakes-modal');
+        const closeCakesModal = document.getElementById('close-cakes-modal');
+
+        // Show the modal when the "Cakes" image is clicked
+        cakesImage.addEventListener('click', () => {
+            cakesModal.classList.remove('hidden');
+        });
+
+        // Hide the modal when the close button is clicked
+        closeCakesModal.addEventListener('click', () => {
+            cakesModal.classList.add('hidden');
+        });
+
+        // Hide the modal when clicking outside the content
+        cakesModal.addEventListener('click', (e) => {
+            if (e.target.id === 'cakes-modal') {
+                cakesModal.classList.add('hidden');
+            }
         });
     </script>
 
