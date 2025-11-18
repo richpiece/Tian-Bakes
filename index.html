@@ -20,13 +20,13 @@
     }
     </script>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS CDN - THIS WAS MISSING! -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        /* ... (Your custom CSS remains here) ... */
         .contact-icons {
             position: fixed;
             bottom: 20px;
@@ -57,7 +57,6 @@
             font-size: 20px;
         }
         
-        /* Mobile responsive adjustments for contact icons */
         @media (max-width: 768px) {
             .contact-icons {
                 bottom: 15px;
@@ -77,7 +76,6 @@
             }
         }
         
-        /* Extra small screens for contact icons */
         @media (max-width: 480px) {
             .contact-icons {
                 bottom: 12px;
@@ -92,14 +90,16 @@
                 font-size: 16px;
             }
         }
-        .contact-icons a:nth-child(1) i { color: #dc2626; } /* email - red */
-        .contact-icons a:nth-child(2) i { color: #059669; } /* phone - green */
-        .contact-icons a:nth-child(3) i { color: #e11d48; } /* instagram - pink */
-        .contact-icons a:nth-child(4) i { color: #1d4ed8; } /* facebook - blue */
+        
+        .contact-icons a:nth-child(1) i { color: #dc2626; }
+        .contact-icons a:nth-child(2) i { color: #059669; }
+        .contact-icons a:nth-child(3) i { color: #e11d48; }
+        .contact-icons a:nth-child(4) i { color: #1d4ed8; }
         
         .cursive {
             font-family: 'Dancing Script', cursive;
         }
+        
         .navbar-button {
             font-weight: 700;
             font-size: 0.875rem;
@@ -109,23 +109,16 @@
             color: #ec4899;
             transition: all 0.3s ease;
         }
+        
         .navbar-button:hover {
             background-color: #fce7f3;
             color: #be185d;
         }
         
-        /* Mobile navbar adjustments */
         @media (max-width: 768px) {
             .navbar-button {
                 font-size: 0.75rem;
                 padding: 0.25rem 0.5rem;
-            }
-            nav .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            nav img {
-                height: 3rem !important;
             }
         }
         
@@ -134,16 +127,8 @@
                 font-size: 0.7rem;
                 padding: 0.2rem 0.4rem;
             }
-            nav .container {
-                padding-left: 0.5rem;
-                padding-right: 0.5rem;
-            }
-            nav img {
-                height: 2.5rem !important;
-            }
         }
 
-        /* Lightbox specific styles for navigation buttons */
         #lightbox {
           position: fixed;
           top: 0;
@@ -205,10 +190,10 @@
           z-index: 10000;
         }
 
-        /* Modal specific styles */
         .modal {
             background-color: rgba(0, 0, 0, 0.7);
         }
+        
         .modal-content {
             width: 90%;
             max-width: 600px;
@@ -222,495 +207,307 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://www.tianbakes.co.uk" />
     <meta property="og:type" content="website" />
-
-</head> <body> <header class="hidden md:block">
-    <div class="relative w-full">
-        <img
-            src="header-bg.png"
-            alt="Tian Bakes Banner"
-            class="w-full h-80 md:h-72 object-cover object-center"
-        />
-        <div class="absolute inset-0 flex items-center px-6 md:px-12">
-            <div class="ml-auto text-black text-sm md:text-base font-medium text-right">
-                <a href="mailto:tianbakes@outlook.com" class="flex items-center gap-2 hover:underline justify-end">
-                    <i class="fas fa-envelope"></i>
-                    <span class="hidden sm:inline">tianbakes@outlook.com</span>
-                </a>
-                <a href="tel:+447555207967" class="flex items-center gap-2 mt-1 hover:underline justify-end">
-                    <i class="fas fa-phone"></i>
-                    <span class="hidden sm:inline">+44 7555 207967</span>
-                </a>
+</head>
+<body>
+    <!-- Desktop Header -->
+    <header class="hidden md:block">
+        <div class="relative w-full">
+            <img
+                src="header-bg.png"
+                alt="Tian Bakes Banner"
+                class="w-full h-80 md:h-72 object-cover object-center"
+            />
+            <div class="absolute inset-0 flex items-center px-6 md:px-12">
+                <div class="ml-auto text-black text-sm md:text-base font-medium text-right">
+                    <a href="mailto:tianbakes@outlook.com" class="flex items-center gap-2 hover:underline justify-end">
+                        <i class="fas fa-envelope"></i>
+                        <span class="hidden sm:inline">tianbakes@outlook.com</span>
+                    </a>
+                    <a href="tel:+447555207967" class="flex items-center gap-2 mt-1 hover:underline justify-end">
+                        <i class="fas fa-phone"></i>
+                        <span class="hidden sm:inline">+44 7555 207967</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <nav class="relative z-20 bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-center space-x-6 font-medium text-gray-700">
-            <a href="#home" class="hover:text-pink-500">Home</a>
-            <a href="#products" class="hover:text-pink-500">Products</a>
-            <a href="#reviews" class="hover:text-pink-500">Reviews</a>
-            <a href="#contact" class="hover:text-pink-500">Contact</a>
-        </div>
-    </nav>
-</header>
-
-<header class="md:hidden relative h-28"> 
-    <img src="header-bg1.png" alt="Header Background" class="absolute inset-0 w-full h-full object-cover object-center z-0">
-    <div class="relative z-10 flex justify-end items-center px-4 py-3 h-full"> 
-        <button id="menu-toggle" class="focus:outline-none text-black"> 
-            <i class="fas fa-bars text-2xl"></i>
-            <span class="text-sm font-semibold">Menu</span>
-        </button>
-    </div>
-</header>
-
-<div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between">
-    <div class="p-6">
-        <button id="close-menu" class="absolute top-4 right-4 text-gray-700">
-            <i class="fas fa-times text-2xl"></i>
-        </button>
-
-        <img src="logo.png" alt="Tian Bakes Logo" class="w-20 mx-auto mb-10">
-
-        <ul class="space-y-6 mt-16 text-center text-2xl font-semibold">
-            <li><a href="#home" class="block hover:text-pink-500" onclick="closeMenuFunc()">Home</a></li>
-            <li><a href="#products" class="block hover:text-pink-500" onclick="closeMenuFunc()">Products</a></li>
-            <li><a href="#reviews" class="block hover:text-pink-500" onclick="closeMenuFunc()">Reviews</a></li>
-            <li><a href="#contact" class="block hover:text-pink-500" onclick="closeMenuFunc()">Contact</a></li>
-        </ul>
-    </div>
-
-    <div class="mb-10 text-center">
-        <img src="rating.png" alt="4.8 Star Rating" class="w-28 mx-auto">
-    </div>
-</div>
-
-<section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
-    <div id="slideshow" class="absolute inset-0 z-0">
-        <div class="slide bg-cover bg-center absolute inset-0 opacity-100 transition-opacity duration-1000"
-            style="background-image: url('gallery1.png');"></div>
-        <div class="slide bg-cover bg-center absolute inset-0 opacity-0 transition-opacity duration-1000"
-            style="background-image: url('gallery2.png');"></div>
-        <div class="slide bg-cover bg-center absolute inset-0 opacity-0 transition-opacity duration-1000"
-            style="background-image: url('gallery3.png');"></div>
-        <div class="slide bg-cover bg-center absolute inset-0 opacity-0 transition-opacity duration-1000"
-            style="background-image: url('gallery4.png');"></div>
-    </div>
-
-    <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
-
-    <div class="relative z-20">
-        <h1 class="text-6xl text-white flex items-center justify-center gap-3" style="font-family: 'Dosis ExtraBold';">
-            Tian 
-            <span class="text-pink-400 animate-pulse">❤</span> 
-            Bakes
-        </h1>
-
-        <p class="text-3xl md:text-4xl mt-2 font-bold text-pink-100 drop-shadow-md cursive">
-            The home of beautiful bakes
-        </p>
-    </div>
-</section>
-
-<script>
-    let slides = document.querySelectorAll("#slideshow .slide");
-    let currentSlide = 0;
-
-    setInterval(() => {
-        slides[currentSlide].classList.remove("opacity-100");
-        slides[currentSlide].classList.add("opacity-0");
-
-        currentSlide = (currentSlide + 1) % slides.length;
-
-        slides[currentSlide].classList.remove("opacity-0");
-        slides[currentSlide].classList.add("opacity-100");
-    }, 4000); // 4 seconds per image
-</script>
-
-
-<section id="about" class="py-16 px-6 bg-white">
-    <div class="container mx-auto text-center max-w-3xl">
-        <h2 class="text-3xl font-bold mb-6 text-pink-600">About Us</h2>
-        <p class="text-lg leading-relaxed">
-            We create unique, handcrafted cakes, cupcakes and cake slices for birthdays, weddings, and special occasions.  
-            Every bake is prepared fresh and delivered across South London — ensuring it arrives looking as good as it tastes.
-        </p>
-    </div>
-</section>
-
-<section id="products" class="py-16 px-6 bg-gray-50">
-    <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-12 text-pink-600">Our Products</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold mb-2">Cakes</h3>
-                <img id="cakes-image" src="cakes.png" alt="Cakes" class="w-full h-48 object-cover rounded cursor-pointer">
-            </div>
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold mb-2">Cupcakes</h3>
-                <img id="cupcakes-image" src="cupcakes.png" alt="Cupcakes" class="w-full h-48 object-cover rounded cursor-pointer">
-            </div>
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-xl font-semibold mb-2">Cake slices</h3>
-                <img id="slices-image" src="cakeslices.png" alt="Cake slices" class="w-full h-48 object-cover rounded cursor-pointer">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="gallery" class="py-16 px-6 bg-gray-50">
-    <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-12 text-pink-600">Some of our work</h2>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            <img src="gallery1.png" alt="Cake 1" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
-            <img src="gallery2.png" alt="Cake 2" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
-            <img src="gallery3.png" alt="Cake 3" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
-            <img src="gallery4.png" alt="Cake 4" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
-            <img src="gallery5.png" alt="Cake 5" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
-            <img src="gallery6.png" alt="Cake 6" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
-            <img src="gallery7.png" alt="Cake 7" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
-            <img src="gallery8.png" alt="Cake 8" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+        <nav class="relative z-20 bg-white shadow-md">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex justify-center space-x-6 font-medium text-gray-700">
+                <a href="#home" class="hover:text-pink-500">Home</a>
+                <a href="#products" class="hover:text-pink-500">Products</a>
+                <a href="#reviews" class="hover:text-pink-500">Reviews</a>
+                <a href="#contact" class="hover:text-pink-500">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Header -->
+    <header class="md:hidden relative h-28"> 
+        <img src="header-bg1.png" alt="Header Background" class="absolute inset-0 w-full h-full object-cover object-center z-0">
+        <div class="relative z-10 flex justify-end items-center px-4 py-3 h-full"> 
+            <button id="menu-toggle" class="focus:outline-none text-black"> 
+                <i class="fas fa-bars text-2xl"></i>
+                <span class="text-sm font-semibold">Menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between">
+        <div class="p-6">
+            <button id="close-menu" class="absolute top-4 right-4 text-gray-700">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+
+            <img src="logo.png" alt="Tian Bakes Logo" class="w-20 mx-auto mb-10">
+
+            <ul class="space-y-6 mt-16 text-center text-2xl font-semibold">
+                <li><a href="#home" class="block hover:text-pink-500" onclick="closeMenuFunc()">Home</a></li>
+                <li><a href="#products" class="block hover:text-pink-500" onclick="closeMenuFunc()">Products</a></li>
+                <li><a href="#reviews" class="block hover:text-pink-500" onclick="closeMenuFunc()">Reviews</a></li>
+                <li><a href="#contact" class="block hover:text-pink-500" onclick="closeMenuFunc()">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="mb-10 text-center">
+            <img src="rating.png" alt="4.8 Star Rating" class="w-28 mx-auto">
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <div id="slideshow" class="absolute inset-0 z-0">
+            <div class="slide bg-cover bg-center absolute inset-0 opacity-100 transition-opacity duration-1000"
+                style="background-image: url('gallery1.png');"></div>
+            <div class="slide bg-cover bg-center absolute inset-0 opacity-0 transition-opacity duration-1000"
+                style="background-image: url('gallery2.png');"></div>
+            <div class="slide bg-cover bg-center absolute inset-0 opacity-0 transition-opacity duration-1000"
+                style="background-image: url('gallery3.png');"></div>
+            <div class="slide bg-cover bg-center absolute inset-0 opacity-0 transition-opacity duration-1000"
+                style="background-image: url('gallery4.png');"></div>
+        </div>
+
+        <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
+
+        <div class="relative z-20">
+            <h1 class="text-6xl text-white flex items-center justify-center gap-3" style="font-family: 'Dosis ExtraBold';">
+                Tian 
+                <span class="text-pink-400 animate-pulse">❤</span> 
+                Bakes
+            </h1>
+
+            <p class="text-3xl md:text-4xl mt-2 font-bold text-pink-100 drop-shadow-md cursive">
+                The home of beautiful bakes
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 bg-white">
+        <div class="container mx-auto text-center max-w-3xl">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">About Us</h2>
+            <p class="text-lg leading-relaxed">
+                We create unique, handcrafted cakes, cupcakes and cake slices for birthdays, weddings, and special occasions.  
+                Every bake is prepared fresh and delivered across South London — ensuring it arrives looking as good as it tastes.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 px-6 bg-gray-50">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12 text-pink-600">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-2">Cakes</h3>
+                    <img id="cakes-image" src="cakes.png" alt="Cakes" class="w-full h-48 object-cover rounded cursor-pointer">
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-2">Cupcakes</h3>
+                    <img id="cupcakes-image" src="cupcakes.png" alt="Cupcakes" class="w-full h-48 object-cover rounded cursor-pointer">
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-2">Cake slices</h3>
+                    <img id="slices-image" src="cakeslices.png" alt="Cake slices" class="w-full h-48 object-cover rounded cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 px-6 bg-gray-50">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12 text-pink-600">Some of our work</h2>
             
-        </div>
-    </div>
-</section>
-
-<section id="featured" class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tianbakes/video/7495284150811757846" data-video-id="7495284150811757846" style="width: 100%; max-width: 500px; margin: 0 auto;">
-            <section> <a target="_blank" title="Tian Bakes TikTok Video" href="https://www.tiktok.com/@tianbakes/video/7495284150811757846">Watch this video on TikTok</a> </section>
-        </blockquote>
-        <script async src="https://www.tiktok.com/embed.js"></script>
-    </div>
-</section>
-
-<section id="reviews" class="py-16 px-6 bg-pink-50">
-    <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-12 text-pink-600">Customer Reviews</h2>
-        <div class="space-y-8 max-w-3xl mx-auto">
-            <div class="bg-white p-6 rounded-lg shadow">
-                <p class="text-lg italic">"This cake will be the second my family has purchased from Tian Bakes, and yet again, we were very satisfied with her creation. By far the best vegan cake we have tasted so far, and honestly, we have tried so many cakes from different …"</p>
-                <div class="flex space-x-4 mt-4 justify-center">
-                    <img src="Paula.png" alt="Paula Review" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
-                </div>
-                <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Paula C</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-                <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn't even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter's birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn't a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
-                <div class="flex space-x-4 mt-4 justify-center">
-                    <img src="Chanelle.png" alt="Chanelle Review 1" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
-                    <img src="Chanelle1.png" alt="Chanelle Review 2" class="review-32 w-32 h-32 object-cover rounded cursor-pointer">
-                </div>
-                <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Chanelle D</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow">
-                <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn't even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter's birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn't a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
-                <div class="flex space-x-4 mt-4 justify-center">
-                    <img src="Ellie.png" alt="Ellie Review 1" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
-                    <img src="Ellie1.png" alt="Ellie Review 2" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
-                </div>
-                <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Ellie W</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <img src="gallery1.png" alt="Cake 1" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+                <img src="gallery2.png" alt="Cake 2" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+                <img src="gallery3.png" alt="Cake 3" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+                <img src="gallery4.png" alt="Cake 4" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+                <img src="gallery5.png" alt="Cake 5" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+                <img src="gallery6.png" alt="Cake 6" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+                <img src="gallery7.png" alt="Cake 7" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
+                <img src="gallery8.png" alt="Cake 8" class="gallery-img w-full h-48 object-cover rounded shadow cursor-pointer">
             </div>
         </div>
-        
-        <div class="mt-6 flex justify-center items-center space-x-4">
-            <a href="https://www.google.com/search?sca_esv=0552b0ba02155725&rlz=1C1GCEA_enGB1141GB1141&sxsrf=AE3TifMZLDDkvlAP0qDtlwEVS_7E48jetA:1758212250020&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwYkR9AP8mcgSQzMxpDxr5H6_vunpz2SwRUDTRb3kRdyxamZzWb9yhnpxRrOK-zI1bCJkmTI6_yr7fRKHhWZokVM4WDr&q=Tian+Bakes+Reviews&sa=X&ved=2ahUKEwjNuuiE2-KPAxW2W0EAHVLwNc8Q0bkNegQIHxAD&biw=1229&bih=556&dpr=1.56"
-                target="_blank"
-                class="text-pink-600 font-bold hover:underline">
-                More Reviews
-            </a>
+    </section>
+
+    <!-- Featured TikTok Section -->
+    <section id="featured" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tianbakes/video/7495284150811757846" data-video-id="7495284150811757846" style="width: 100%; max-width: 500px; margin: 0 auto;">
+                <section> <a target="_blank" title="Tian Bakes TikTok Video" href="https://www.tiktok.com/@tianbakes/video/7495284150811757846">Watch this video on TikTok</a> </section>
+            </blockquote>
+            <script async src="https://www.tiktok.com/embed.js"></script>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="contact" class="bg-white py-16">
-    <div class="max-w-4xl mx-auto px-6">
-        <h3 class="text-3xl font-bold text-pink-600 mb-6 text-center">Get in Touch</h3>
-        <p class="text-lg text-gray-700 mb-6 text-center">Want to order a cake or ask a question? Reach us directly:</p>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-            <div>
-                <form action="https://formspree.io/f/mzzawgav" method="POST" class="space-y-4 bg-pink-50 p-6 rounded-lg shadow">
-                    <input type="text" name="name" placeholder="Your Name" required
-                        class="w-full px-4 py-2 rounded border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400">
-                    <input type="email" name="_replyto" placeholder="Your Email" required
-                        class="w-full px-4 py-2 rounded border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400">
-                    <textarea name="message" placeholder="Your Message" rows="5" required
-                        class="w-full px-4 py-2 rounded border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
-                    <button type="submit"
-                        class="w-full bg-pink-600 text-white px-6 py-3 rounded hover:bg-pink-700 transition font-semibold">
-                        Send Message
-                    </button>
-                </form>
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 px-6 bg-pink-50">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12 text-pink-600">Customer Reviews</h2>
+            <div class="space-y-8 max-w-3xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <p class="text-lg italic">"This cake will be the second my family has purchased from Tian Bakes, and yet again, we were very satisfied with her creation. By far the best vegan cake we have tasted so far, and honestly, we have tried so many cakes from different …"</p>
+                    <div class="flex space-x-4 mt-4 justify-center">
+                        <img src="Paula.png" alt="Paula Review" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
+                    </div>
+                    <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Paula C</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn't even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter's birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn't a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
+                    <div class="flex space-x-4 mt-4 justify-center">
+                        <img src="Chanelle.png" alt="Chanelle Review 1" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
+                        <img src="Chanelle1.png" alt="Chanelle Review 2" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
+                    </div>
+                    <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Chanelle D</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <p class="text-lg italic">"Tian Bakes is an absolute dream to work with! The whole process was so smooth. Tian answered questions I didn't even know I needed to ask, which made everything stress-free and super easy. I ordered rainbow & unicorn cupcakes for my daughter's birthday and Sonic-themed ones for my nephew. Neither of them are big cake fans, but there wasn't a single cupcake left by the end of the day. The cupcakes looked amazing and tasted even better, all at a really reasonable price. Highly recommend!"</p>
+                    <div class="flex space-x-4 mt-4 justify-center">
+                        <img src="Ellie.png" alt="Ellie Review 1" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
+                        <img src="Ellie1.png" alt="Ellie Review 2" class="review-img w-32 h-32 object-cover rounded cursor-pointer">
+                    </div>
+                    <p class="mt-4 font-semibold">– ⭐ ⭐ ⭐ ⭐ ⭐ Ellie W</p>
+                </div>
             </div>
+            
+            <div class="mt-6 flex justify-center items-center space-x-4">
+                <a href="https://www.google.com/search?sca_esv=0552b0ba02155725&rlz=1C1GCEA_enGB1141GB1141&sxsrf=AE3TifMZLDDkvlAP0qDtlwEVS_7E48jetA:1758212250020&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwYkR9AP8mcgSQzMxpDxr5H6_vunpz2SwRUDTRb3kRdyxamZzWb9yhnpxRrOK-zI1bCJkmTI6_yr7fRKHhWZokVM4WDr&q=Tian+Bakes+Reviews&sa=X&ved=2ahUKEwjNuuiE2-KPAxW2W0EAHVLwNc8Q0bkNegQIHxAD&biw=1229&bih=556&dpr=1.56"
+                    target="_blank"
+                    class="text-pink-600 font-bold hover:underline">
+                    More Reviews
+                </a>
+            </div>
+        </div>
+    </section>
 
-            <div class="flex flex-col space-y-6">
-                <p class="text-gray-800 font-semibold">Address: CR4 Mitcham, London, UK</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d159190.87532348366!2d-0.3475713481269383!3d51.42460309624597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487607730e70af71%3A0x6b772c6085a8553d!2sMitcham!5e0!3m2!1sen!2suk!4v1700400000000!5m2!1sen!2suk" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow"></iframe>
-                
-                <div class="flex flex-col space-y-2 text-gray-800 text-lg">
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-envelope text-pink-600"></i>
-                        <span>tianbakes@outlook.com</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-phone text-green-600"></i>
-                        <span> WhatsApp +44 7555 207967</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i class="fab fa-instagram text-pink-500"></i>
-                        <a href="https://www.instagram.com/tian_bakes/" target="_blank">Instagram</a>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i class="fab fa-facebook text-blue-600"></i>
-                        <a href="https://www.facebook.com/TianBakes" target="_blank">Facebook</a>
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white py-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <h3 class="text-3xl font-bold text-pink-600 mb-6 text-center">Get in Touch</h3>
+            <p class="text-lg text-gray-700 mb-6 text-center">Want to order a cake or ask a question? Reach us directly:</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <form action="https://formspree.io/f/mzzawgav" method="POST" class="space-y-4 bg-pink-50 p-6 rounded-lg shadow">
+                        <input type="text" name="name" placeholder="Your Name" required
+                            class="w-full px-4 py-2 rounded border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                        <input type="email" name="_replyto" placeholder="Your Email" required
+                            class="w-full px-4 py-2 rounded border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                        <textarea name="message" placeholder="Your Message" rows="5" required
+                            class="w-full px-4 py-2 rounded border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+                        <button type="submit"
+                            class="w-full bg-pink-600 text-white px-6 py-3 rounded hover:bg-pink-700 transition font-semibold">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="flex flex-col space-y-6">
+                    <p class="text-gray-800 font-semibold">Address: CR4 Mitcham, London, UK</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d159190.87532348366!2d-0.3475713481269383!3d51.42460309624597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487607730e70af71%3A0x6b772c6085a8553d!2sMitcham!5e0!3m2!1sen!2suk!4v1700400000000!5m2!1sen!2suk" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow"></iframe>
+                    
+                    <div class="flex flex-col space-y-2 text-gray-800 text-lg">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-pink-600"></i>
+                            <span>tianbakes@outlook.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-green-600"></i>
+                            <span> WhatsApp +44 7555 207967</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fab fa-instagram text-pink-500"></i>
+                            <a href="https://www.instagram.com/tian_bakes/" target="_blank">Instagram</a>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fab fa-facebook text-blue-600"></i>
+                            <a href="https://www.facebook.com/TianBakes" target="_blank">Facebook</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-600 text-white py-6 text-center">
+        <img src="logo.png" alt="Tian Bakes Logo" class="h-10 md:h-14 mx-auto">
+        <p>© 2025 Tian Bakes | Bespoke Cakes and Bakes</p>
+    </footer>
+
+    <!-- Floating Contact Icons -->
+    <div class="contact-icons">
+        <a href="mailto:tianbakes@outlook.com" title="Email us">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+447555207967" title="Call us">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://www.instagram.com/tian_bakes/" target="_blank" title="Follow on Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/TianBakes" target="_blank" title="Like on Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
     </div>
-</section>
 
-<footer class="bg-pink-600 text-white py-6 text-center">
-    
-    <p>  <img src="logo.png" alt="Tian Bakes Logo" class="h-10 md:h-14 mx-auto"> © 2025 Tian Bakes | Bespoke Cakes and Bakes</p>
-</footer>
-
-<div class="contact-icons">
-    <a href="mailto:tianbakes@outlook.com" title="Email us">
-        <i class="fas fa-envelope"></i>
-    </a>
-    <a href="tel:+447555207967" title="Call us">
-        <i class="fas fa-phone"></i>
-    </a>
-    <a href="https://www.instagram.com/tian_bakes/" target="_blank" title="Follow on Instagram">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.facebook.com/TianBakes" target="_blank" title="Like on Facebook">
-        <i class="fab fa-facebook"></i>
-    </a>
-</div>
-
-<div id="lightbox">
-    <span id="close-btn">×</span>
-    <span id="prev-btn" class="nav-btn">❮</span>
-    <span id="next-btn" class="nav-btn">❯</span>
-    <div id="lightbox-content">
-        <img id="lightbox-img" src="" alt="Expanded view">
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <span id="close-btn">×</span>
+        <span id="prev-btn" class="nav-btn">❮</span>
+        <span id="next-btn" class="nav-btn">❯</span>
+        <div id="lightbox-content">
+            <img id="lightbox-img" src="" alt="Expanded view">
+        </div>
     </div>
-</div>
 
-<div id="cakes-modal" class="fixed inset-0 hidden flex items-center justify-center z-[1001] modal">
-    <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl relative w-11/12 max-w-md lg:max-w-xl">
-        <button id="close-cakes-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
-            <i class="fas fa-times text-2xl"></i>
-        </button>
-        <h3 class="text-3xl font-bold mb-4 text-pink-600 text-center">Bespoke Cakes for Every Occasion</h3>
-        <p class="text-lg mb-4 text-gray-700">
-            Whether you're dreaming of an elegant single-tier celebration cake, a stunning two-tier centerpiece, or a show-stopping three-tier wedding masterpiece, we'll bring your vision to life.
-        </p>
-        <p class="text-lg mb-4 text-gray-700">
-            Tell us about your ideal cake – from rich chocolate indulgence to delicate vanilla sponge, zesty lemon to decadent red velvet. Share your design inspirations, color palette, or theme, and our skilled bakers will craft something uniquely yours.
-        </p>
-        <p class="text-lg text-gray-700">
-            Perfect for birthdays, farewell celebrations, anniversaries, weddings, or simply treating yourself to something extraordinary. Every cake is lovingly handmade to order, ensuring your special moment gets the attention it deserves.
-        </p>
+    <!-- Cakes Modal -->
+    <div id="cakes-modal" class="fixed inset-0 hidden flex items-center justify-center z-[1001] modal">
+        <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl relative w-11/12 max-w-md lg:max-w-xl">
+            <button id="close-cakes-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <h3 class="text-3xl font-bold mb-4 text-pink-600 text-center">Bespoke Cakes for Every Occasion</h3>
+            <p class="text-lg mb-4 text-gray-700">
+                Whether you're dreaming of an elegant single-tier celebration cake, a stunning two-tier centerpiece, or a show-stopping three-tier wedding masterpiece, we'll bring your vision to life.
+            </p>
+            <p class="text-lg mb-4 text-gray-700">
+                Tell us about your ideal cake – from rich chocolate indulgence to delicate vanilla sponge, zesty lemon to decadent red velvet. Share your design inspirations, color palette, or theme, and our skilled bakers will craft something uniquely yours.
+            </p>
+            <p class="text-lg text-gray-700">
+                Perfect for birthdays, farewell celebrations, anniversaries, weddings, or simply treating yourself to something extraordinary. Every cake is lovingly handmade to order, ensuring your special moment gets the attention it deserves.
+            </p>
+        </div>
     </div>
-</div>
 
-<div id="cupcakes-modal" class="fixed inset-0 hidden flex items-center justify-center z-[1001] modal">
-    <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl relative w-11/12 max-w-md lg:max-w-xl">
-        <button id="close-cupcakes-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
-            <i class="fas fa-times text-2xl"></i>
-        </button>
-        <h3 class="text-3xl font-bold mb-4 text-pink-600 text-center">Delicious Custom Cupcakes Made Just for You</h3>
-        <p class="text-lg mb-4 text-gray-700">
-            From classic vanilla buttercream to rich chocolate ganache, salted caramel to fresh strawberry – our handcrafted cupcakes are the perfect sweet treat for any occasion.
-        </p>
-        <p class="text-lg mb-4 text-gray-700">
-        Whether it's elegant floral decorations for a bridal shower, colorful sprinkles for a child's birthday, or sophisticated corporate branding for office events, we'll make each cupcake as special as your moment.
-        </p>
-        <p class="text-lg mb-4 text-gray-700">
-            Perfect for parties, office celebrations, baby showers, or sharing something delightful with friends and family. Each batch is freshly baked to order with premium ingredients and finished with our signature attention to detail.
-        </p>
-        <p class="text-lg text-gray-700 font-bold mt-4">
-            Minimum order of 12 cupcakes.
-        </p>
-    </div>
-</div>
-
-<div id="slices-modal" class="fixed inset-0 hidden flex items-center justify-center z-[1001] modal">
-    <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl relative w-11/12 max-w-md lg:max-w-xl">
-        <button id="close-slices-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
-            <i class="fas fa-times text-2xl"></i>
-        </button>
-        <h3 class="text-3xl font-bold mb-4 text-pink-600 text-center">Can't Decide on Just One Flavor? Try Our Mixed Cake Slice Selection!</h3>
-        <p class="text-lg mb-4 text-gray-700">
-            Why choose between rich chocolate fudge, zesty lemon drizzle, and classic Victoria sponge when you can have them all? Our individual cake slices are perfect for those who love variety or want to sample different flavors before placing a larger order.
-        </p>
-        <p class="text-lg mb-4 text-gray-700">
-            Each slice is generously cut from our full-sized cakes, featuring the same premium ingredients and beautiful presentation you'd expect from our bespoke creations. Mix and match your favorites – from indulgent red velvet to light carrot cake, tangy key lime to decadent salted caramel.
-        </p>
-        <p class="text-lg text-gray-700 font-bold mt-4">
-            Available in various flavor combinations.
-        </p>
-    </div>
-</div>
-
-<script>
-    const galleryImages = document.querySelectorAll(".gallery-img");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const prevBtn = document.getElementById("prev-btn");
-    const nextBtn = document.getElementById("next-btn");
-    const closeBtn = document.getElementById("close-btn");
-
-    let currentImageIndex = 0;
-
-    // Create an array of image sources from the gallery
-    const imageSources = Array.from(galleryImages).map(img => img.src);
-
-    function openLightbox(index) {
-        currentImageIndex = index;
-        lightboxImg.src = imageSources[currentImageIndex];
-        lightbox.style.display = "flex";
-    }
-
-    function showNextImage() {
-        currentImageIndex = (currentImageIndex + 1) % imageSources.length;
-        lightboxImg.src = imageSources[currentImageIndex];
-    }
-
-    function showPrevImage() {
-        currentImageIndex = (currentImageIndex - 1 + imageSources.length) % imageSources.length;
-        lightboxImg.src = imageSources[currentImageIndex];
-    }
-
-    // Open lightbox on image click
-    galleryImages.forEach((image, index) => {
-        image.addEventListener("click", () => {
-            openLightbox(index);
-        });
-    });
-
-    // Close lightbox
-    closeBtn.addEventListener("click", () => {
-        lightbox.style.display = "none";
-    });
-
-    // Navigate with buttons
-    nextBtn.addEventListener("click", showNextImage);
-    prevBtn.addEventListener("click", showPrevImage);
-
-    // Navigate with keyboard arrows
-    document.addEventListener("keydown", (e) => {
-        if (lightbox.style.display === "flex") {
-            if (e.key === "ArrowRight") {
-                showNextImage();
-            } else if (e.key === "ArrowLeft") {
-                showPrevImage();
-            } else if (e.key === "Escape") {
-                lightbox.style.display = "none";
-            }
-        }
-    });
-
-    // Close lightbox when clicking on the overlay
-    lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-            lightbox.style.display = "none";
-        }
-    });
-</script>
-
-<script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const closeMenu = document.getElementById('close-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('#mobile-menu a');
-
-    // Open the menu when the hamburger button is clicked
-    function openMenu() {
-        mobileMenu.classList.remove('-translate-x-full');
-    }
-
-    // Close the menu
-    function closeMenuFunc() {
-        mobileMenu.classList.add('-translate-x-full');
-    }
-    
-    menuToggle.addEventListener('click', openMenu);
-    closeMenu.addEventListener('click', closeMenuFunc);
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', closeMenuFunc);
-    });
-
-    // Cakes Modal Functionality
-    const cakesImage = document.getElementById('cakes-image');
-    const cakesModal = document.getElementById('cakes-modal');
-    const closeCakesModal = document.getElementById('close-cakes-modal');
-
-    // Show the modal when the "Cakes" image is clicked
-    cakesImage.addEventListener('click', () => {
-        cakesModal.classList.remove('hidden');
-    });
-
-    // Hide the modal when the close button is clicked
-    closeCakesModal.addEventListener('click', () => {
-        cakesModal.classList.add('hidden');
-    });
-
-    // Hide the modal when clicking outside the content
-    cakesModal.addEventListener('click', (e) => {
-        if (e.target.id === 'cakes-modal') {
-            cakesModal.classList.add('hidden');
-        }
-    });
-
-    // Cupcakes Modal Functionality
-    const cupcakesImage = document.getElementById('cupcakes-image');
-    const cupcakesModal = document.getElementById('cupcakes-modal');
-    const closeCupcakesModal = document.getElementById('close-cupcakes-modal');
-
-    // Show the modal when the "Cupcakes" image is clicked
-    cupcakesImage.addEventListener('click', () => {
-        cupcakesModal.classList.remove('hidden');
-    });
-
-    // Hide the modal when the close button is clicked
-    closeCupcakesModal.addEventListener('click', () => {
-        cupcakesModal.classList.add('hidden');
-    });
-
-    // Hide the modal when clicking outside the content
-    cupcakesModal.addEventListener('click', (e) => {
-        if (e.target.id === 'cupcakes-modal') {
-            cupcakesModal.classList.add('hidden');
-        }
-    });
-
-    // Slices Modal Functionality
-    const slicesImage = document.getElementById('slices-image');
-    const slicesModal = document.getElementById('slices-modal');
-    const closeSlicesModal = document.getElementById('close-slices-modal');
-
-    // Show the modal when the "Slices" image is clicked
-    slicesImage.addEventListener('click', () => {
-        slicesModal.classList.remove('hidden');
-    });
-
-    // Hide the modal when the close button is clicked
-    closeSlicesModal.addEventListener('click', () => {
-        slicesModal.classList.add('hidden');
-    });
-
-    // Hide the modal when clicking outside the content
-    slicesModal.addEventListener('click', (e) => {
-        if (e.target.id === 'slices-modal') {
-            slicesModal.classList.add('hidden');
-        }
-    });
-</script>
-
-</body> </html>
+    <!-- Cupcakes Modal -->
+    <div id="cupcakes-modal" class="fixed inset-0 hidden flex items-center justify-center z-[1001] modal">
+        <div class="bg-white p-6 md:p-8 rounded-lg shadow-xl relative w-11/12 max-w-md lg:max-w-xl">
+            <button id="close-cupcakes-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <h3 class="text-3xl font-bold mb-4 text-pink-600 text-center">Delicious Custom Cupcakes Made Just for You</h3>
+            <p class="text-lg mb-4 text-gray-700">
+                From classic vanilla buttercream to rich chocolate ganache, salted caramel to fresh strawberry – our handcrafted cupcakes are the perfect sweet treat for any occasion.
